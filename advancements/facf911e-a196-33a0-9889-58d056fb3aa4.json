@@ -379,6 +379,7 @@
   },
   "minecraft:husbandry/balanced_diet": {
     "criteria": {
+      "cooked_mutton": "2019-09-26 19:23:55 +0000",
       "cooked_beef": "2019-09-25 22:04:00 +0000",
       "bread": "2019-09-26 11:53:01 +0000",
       "rotten_flesh": "2019-09-24 13:57:06 +0000",
@@ -1689,6 +1690,7 @@
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
+      "minecraft:cold_ocean": "2019-09-26 20:54:27 +0000",
       "minecraft:forest": "2019-09-24 12:46:35 +0000",
       "minecraft:mountains": "2019-09-26 11:55:25 +0000",
       "minecraft:taiga": "2019-09-26 15:32:15 +0000",
@@ -1696,10 +1698,12 @@
       "minecraft:taiga_hills": "2019-09-26 15:33:56 +0000",
       "minecraft:desert": "2019-09-26 16:30:45 +0000",
       "minecraft:birch_forest": "2019-09-26 15:04:44 +0000",
+      "minecraft:deep_lukewarm_ocean": "2019-09-26 20:56:52 +0000",
       "minecraft:savanna_plateau": "2019-09-26 17:44:45 +0000",
       "minecraft:beach": "2019-09-26 15:07:09 +0000",
       "minecraft:dark_forest": "2019-09-24 12:50:00 +0000",
       "minecraft:river": "2019-09-24 12:46:32 +0000",
+      "minecraft:lukewarm_ocean": "2019-09-26 20:56:50 +0000",
       "minecraft:birch_forest_hills": "2019-09-26 15:07:21 +0000",
       "minecraft:wooded_mountains": "2019-09-26 15:18:47 +0000",
       "minecraft:wooded_hills": "2019-09-26 15:04:17 +0000",
