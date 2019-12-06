@@ -1,0 +1,1497 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 219152384 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2767), pid=17064, tid=0x00007fe7277ff700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_222-b10) (build 1.8.0_222-b10)
+# Java VM: OpenJDK 64-Bit Server VM (25.222-b10 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fe748159000):  VMThread [stack: 0x00007fe727700000,0x00007fe727800000] [id=17068]
+
+Stack: [0x00007fe727700000,0x00007fe727800000],  sp=0x00007fe7277fe4a0,  free space=1017k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xb71202]
+V  [libjvm.so+0x500237]
+V  [libjvm.so+0x9325e0]
+V  [libjvm.so+0x9296fe]
+V  [libjvm.so+0x9af706]
+V  [libjvm.so+0x9b0a78]
+V  [libjvm.so+0x9aca16]
+V  [libjvm.so+0x9acdac]
+V  [libjvm.so+0x959fc8]
+V  [libjvm.so+0xb72ed2]
+V  [libjvm.so+0xb77a46]
+V  [libjvm.so+0xb75d45]
+V  [libjvm.so+0xb7661d]
+V  [libjvm.so+0xb76a28]
+V  [libjvm.so+0x92f972]
+
+VM_Operation (0x00007fe71102d2e0): ParallelGCFailedAllocation, mode: safepoint, requested by thread 0x00007fe748b81000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007fe6ec1b1000 JavaThread "Netty Epoll Server IO #0" daemon [_thread_in_native, id=17096, stack(0x00007fe6eb5ee000,0x00007fe6eb6ef000)]
+  0x00007fe6ec1aa800 JavaThread "ObjectCleanerThread" daemon [_thread_blocked, id=17095, stack(0x00007fe6eb6ef000,0x00007fe6eb7f0000)]
+  0x00007fe6ec288800 JavaThread "Timer-0" daemon [_thread_blocked, id=17094, stack(0x00007fe6ebbfe000,0x00007fe6ebcff000)]
+  0x00007fe6ec280800 JavaThread "Paper Async Chunk Task Thread #0" [_thread_blocked, id=17093, stack(0x00007fe6ebcff000,0x00007fe6ebe00000)]
+  0x00007fe6ec126800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=17091, stack(0x00007fe6f81ab000,0x00007fe6f82ac000)]
+  0x00007fe6ec05e800 JavaThread "Craft Scheduler Thread - 3" [_thread_blocked, id=17090, stack(0x00007fe6f8984000,0x00007fe6f8a85000)]
+  0x00007fe6ec05c800 JavaThread "Craft Scheduler Thread - 2" [_thread_blocked, id=17089, stack(0x00007fe6f8a85000,0x00007fe6f8b86000)]
+  0x00007fe6ec05b000 JavaThread "Craft Scheduler Thread - 1" [_thread_blocked, id=17088, stack(0x00007fe6f8b86000,0x00007fe6f8c87000)]
+  0x00007fe6ec056000 JavaThread "Craft Scheduler Thread - 0" [_thread_blocked, id=17087, stack(0x00007fe6f8c87000,0x00007fe6f8d88000)]
+  0x00007fe6ec005000 JavaThread "Server console handler" daemon [_thread_blocked, id=17086, stack(0x00007fe6f8f88000,0x00007fe6f9089000)]
+  0x00007fe74804c800 JavaThread "DestroyJavaVM" [_thread_blocked, id=17065, stack(0x00007fe750378000,0x00007fe750478000)]
+  0x00007fe7489fb800 JavaThread "Server thread" [_thread_blocked, id=17085, stack(0x00007fe710033000,0x00007fe710134000)]
+  0x00007fe7489fa000 JavaThread "Server Infinisleeper" daemon [_thread_blocked, id=17084, stack(0x00007fe710134000,0x00007fe710235000)]
+  0x00007fe74885d000 JavaThread "Snooper Timer" daemon [_thread_blocked, id=17083, stack(0x00007fe710235000,0x00007fe710336000)]
+  0x00007fe748b93800 JavaThread "Paper Async Task Handler Thread - 0" [_thread_blocked, id=17082, stack(0x00007fe710536000,0x00007fe710637000)]
+  0x00007fe748b81000 JavaThread "Server-Worker-2" daemon [_thread_blocked, id=17081, stack(0x00007fe710f2f000,0x00007fe711030000)]
+  0x00007fe748b7e800 JavaThread "Server-Worker-1" daemon [_thread_blocked, id=17080, stack(0x00007fe724a10000,0x00007fe724b11000)]
+  0x00007fe7485a7800 JavaThread "process reaper" daemon [_thread_blocked, id=17078, stack(0x00007fe738021000,0x00007fe73805a000)]
+  0x00007fe74848d000 JavaThread "Log4j2-TF-1-AsyncLogger[AsyncContext@70dea4e]-1" daemon [_thread_blocked, id=17076, stack(0x00007fe7265e8000,0x00007fe7266e9000)]
+  0x00007fe7481b5000 JavaThread "Service Thread" daemon [_thread_blocked, id=17074, stack(0x00007fe7270f9000,0x00007fe7271fa000)]
+  0x00007fe7481a2800 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=17073, stack(0x00007fe7271fb000,0x00007fe7272fb000)]
+  0x00007fe748193000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=17072, stack(0x00007fe7272fc000,0x00007fe7273fc000)]
+  0x00007fe748191000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=17071, stack(0x00007fe7273fc000,0x00007fe7274fd000)]
+  0x00007fe748167800 JavaThread "Finalizer" daemon [_thread_blocked, id=17070, stack(0x00007fe7274fd000,0x00007fe7275fe000)]
+  0x00007fe748163000 JavaThread "Reference Handler" daemon [_thread_blocked, id=17069, stack(0x00007fe7275fe000,0x00007fe7276ff000)]
+
+Other Threads:
+=>0x00007fe748159000 VMThread [stack: 0x00007fe727700000,0x00007fe727800000] [id=17068]
+  0x00007fe7481c1800 WatcherThread [stack: 0x00007fe726ff9000,0x00007fe7270f9000] [id=17075]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007fe748049820] Threads_lock - owner thread: 0x00007fe748159000
+[0x00007fe748049d20] Heap_lock - owner thread: 0x00007fe748b81000
+
+heap address: 0x00000006cc400000, size: 3900 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 915968K, used 43504K [0x000000076ec00000, 0x00000007b2f00000, 0x00000007c0000000)
+  eden space 854016K, 0% used [0x000000076ec00000,0x000000076ec00000,0x00000007a2e00000)
+  from space 61952K, 70% used [0x00000007af280000,0x00000007b1cfc0a0,0x00000007b2f00000)
+  to   space 43520K, 0% used [0x00000007a2e00000,0x00000007a2e00000,0x00000007a5880000)
+ ParOldGen       total 699392K, used 65985K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 9% used [0x00000006cc400000,0x00000006d0470648,0x00000006f6f00000)
+ Metaspace       used 47240K, capacity 51099K, committed 51496K, reserved 1093632K
+  class space    used 6549K, capacity 7598K, committed 7720K, reserved 1048576K
+
+Card table byte_map: [0x00007fe74c54a000,0x00007fe74cce9000] byte_map_base: 0x00007fe748ee8000
+
+Marking Bits: (ParMarkBitMap*) 0x00007fe74f646740
+ Begin Bits: [0x00007fe72c620000, 0x00007fe730310000)
+ End Bits:   [0x00007fe730310000, 0x00007fe734000000)
+
+Polling page: 0x00007fe750481000
+
+CodeCache: size=245760Kb used=9806Kb max_used=11045Kb free=235953Kb
+ bounds [0x00007fe739000000, 0x00007fe739b10000, 0x00007fe748000000]
+ total_blobs=4532 nmethods=3833 adapters=613
+ compilation: enabled
+
+Compilation events (250 events):
+Event: 10.135 Thread 0x00007fe7481a2800 nmethod 4562% 0x00007fe739a98910 code [0x00007fe739a98aa0, 0x00007fe739a98e70]
+Event: 10.135 Thread 0x00007fe7481a2800 4563       3       sun.security.provider.SecureRandom::updateState (81 bytes)
+Event: 10.135 Thread 0x00007fe7481a2800 nmethod 4563 0x00007fe739a98310 code [0x00007fe739a98480, 0x00007fe739a98770]
+Event: 10.136 Thread 0x00007fe7481a2800 4564       3       com.mojang.datafixers.optics.Lens::eval (8 bytes)
+Event: 10.136 Thread 0x00007fe7481a2800 nmethod 4564 0x00007fe739a93810 code [0x00007fe739a93980, 0x00007fe739a93b88]
+Event: 10.136 Thread 0x00007fe7481a2800 4565       3       com.mojang.datafixers.optics.Lens::eval (13 bytes)
+Event: 10.136 Thread 0x00007fe7481a2800 nmethod 4565 0x00007fe739a97710 code [0x00007fe739a978c0, 0x00007fe739a97ff0]
+Event: 10.138 Thread 0x00007fe7481a2800 4566       3       java.math.BigInteger::implMontgomeryMultiplyChecks (123 bytes)
+Event: 10.139 Thread 0x00007fe7481a2800 nmethod 4566 0x00007fe739a99090 code [0x00007fe739a99380, 0x00007fe739a9aa78]
+Event: 10.147 Thread 0x00007fe7481a2800 4568       3       com.mojang.datafixers.types.templates.Tag$TagType::equals (68 bytes)
+Event: 10.147 Thread 0x00007fe7481a2800 nmethod 4568 0x00007fe739a9e910 code [0x00007fe739a9eac0, 0x00007fe739a9f218]
+Event: 10.147 Thread 0x00007fe7481a2800 4567       3       java.math.BigInteger::squareToLen (33 bytes)
+Event: 10.147 Thread 0x00007fe7481a2800 nmethod 4567 0x00007fe739a9f410 code [0x00007fe739a9f5a0, 0x00007fe739a9f878]
+Event: 10.151 Thread 0x00007fe748193000 nmethod 4145 0x00007fe739a9f990 code [0x00007fe739a9fb40, 0x00007fe739aa01c8]
+Event: 10.151 Thread 0x00007fe7481a2800 4571       3       com.mojang.datafixers.TypeRewriteRule$OrElse::equals (55 bytes)
+Event: 10.151 Thread 0x00007fe748193000 4574 %     4       java.math.BigInteger::oddModPow @ 528 (792 bytes)
+Event: 10.151 Thread 0x00007fe7481a2800 nmethod 4571 0x00007fe739a9dcd0 code [0x00007fe739a9dea0, 0x00007fe739a9e718]
+Event: 10.151 Thread 0x00007fe7481a2800 4572       3       com.mojang.datafixers.TypeRewriteRule$All::equals (63 bytes)
+Event: 10.151 Thread 0x00007fe7481a2800 nmethod 4572 0x00007fe739a9d310 code [0x00007fe739a9d4c0, 0x00007fe739a9db88]
+Event: 10.151 Thread 0x00007fe7481a2800 4573       3       java.math.BigInteger::equals (91 bytes)
+Event: 10.152 Thread 0x00007fe7481a2800 nmethod 4573 0x00007fe739a9ca50 code [0x00007fe739a9cbe0, 0x00007fe739a9d170]
+Event: 10.152 Thread 0x00007fe7481a2800 4570       3       java.math.BigInteger::implSquareToLenChecks (198 bytes)
+Event: 10.153 Thread 0x00007fe7481a2800 nmethod 4570 0x00007fe739aa0850 code [0x00007fe739aa0cc0, 0x00007fe739aa3758]
+Event: 10.153 Thread 0x00007fe7481a2800 4569       3       java.math.BigInteger::montgomerySquare (49 bytes)
+Event: 10.153 Thread 0x00007fe7481a2800 nmethod 4569 0x00007fe739a9be50 code [0x00007fe739a9c040, 0x00007fe739a9c6b8]
+Event: 10.153 Thread 0x00007fe7481a2800 4575       3       com.mojang.datafixers.types.templates.RecursivePoint::apply (21 bytes)
+Event: 10.154 Thread 0x00007fe7481a2800 nmethod 4575 0x00007fe739a9b810 code [0x00007fe739a9b9a0, 0x00007fe739a9bd08]
+Event: 10.189 Thread 0x00007fe7481a2800 4583 %     3       java.math.MutableBigInteger::divWord @ 51 (108 bytes)
+Event: 10.190 Thread 0x00007fe7481a2800 nmethod 4583% 0x00007fe739aa4b50 code [0x00007fe739aa4ce0, 0x00007fe739aa50b0]
+Event: 10.190 Thread 0x00007fe7481a2800 4584       3       java.math.MutableBigInteger::divWord (108 bytes)
+Event: 10.190 Thread 0x00007fe7481a2800 nmethod 4584 0x00007fe739aa5210 code [0x00007fe739aa53a0, 0x00007fe739aa5730]
+Event: 10.219 Thread 0x00007fe7481a2800 4586       2       java.math.MutableBigInteger::primitiveRightShift (80 bytes)
+Event: 10.220 Thread 0x00007fe7481a2800 nmethod 4586 0x00007fe739aa5890 code [0x00007fe739aa5a00, 0x00007fe739aa5c70]
+Event: 10.221 Thread 0x00007fe7481a2800 4587       2       java.math.MutableBigInteger::subtract (226 bytes)
+Event: 10.222 Thread 0x00007fe7481a2800 nmethod 4587 0x00007fe739aa9bd0 code [0x00007fe739aa9d80, 0x00007fe739aaa2b8]
+Event: 10.222 Thread 0x00007fe7481a2800 4588       2       java.math.MutableBigInteger::add (346 bytes)
+Event: 10.222 Thread 0x00007fe748193000 nmethod 4574% 0x00007fe739aaa7d0 code [0x00007fe739aaa9e0, 0x00007fe739aabb30]
+Event: 10.222 Thread 0x00007fe748193000 4579       4       java.math.MutableBigInteger::normalize (91 bytes)
+Event: 10.222 Thread 0x00007fe7481a2800 nmethod 4588 0x00007fe739aa8cd0 code [0x00007fe739aa8e80, 0x00007fe739aa95c8]
+Event: 10.222 Thread 0x00007fe7481a2800 4589       2       java.math.MutableBigInteger::primitiveLeftShift (89 bytes)
+Event: 10.222 Thread 0x00007fe7481a2800 nmethod 4589 0x00007fe739aa8710 code [0x00007fe739aa8880, 0x00007fe739aa8af0]
+Event: 10.223 Thread 0x00007fe7481a2800 4590       2       java.math.MutableBigInteger::rightShift (79 bytes)
+Event: 10.223 Thread 0x00007fe7481a2800 nmethod 4590 0x00007fe739aa81d0 code [0x00007fe739aa8360, 0x00007fe739aa85a8]
+Event: 10.224 Thread 0x00007fe7481a2800 4593       2       java.math.MutableBigInteger::leftShift (293 bytes)
+Event: 10.224 Thread 0x00007fe7481a2800 nmethod 4593 0x00007fe739aa7590 code [0x00007fe739aa7760, 0x00007fe739aa7d58]
+Event: 10.224 Thread 0x00007fe7481a2800 4591       2       java.math.MutableBigInteger::isOne (27 bytes)
+Event: 10.224 Thread 0x00007fe7481a2800 nmethod 4591 0x00007fe739aa7190 code [0x00007fe739aa7300, 0x00007fe739aa74b0]
+Event: 10.224 Thread 0x00007fe7481a2800 4592       2       java.math.MutableBigInteger::isZero (13 bytes)
+Event: 10.224 Thread 0x00007fe7481a2800 nmethod 4592 0x00007fe739aa6e50 code [0x00007fe739aa6fa0, 0x00007fe739aa7110]
+Event: 10.225 Thread 0x00007fe748193000 nmethod 4579 0x00007fe739aa6a50 code [0x00007fe739aa6ba0, 0x00007fe739aa6d58]
+Event: 10.225 Thread 0x00007fe748193000 4582       4       java.math.BigInteger::multiplyByInt (144 bytes)
+Event: 10.233 Thread 0x00007fe7481a2800 4595       1       java.util.Calendar::internalSet (8 bytes)
+Event: 10.233 Thread 0x00007fe7481a2800 nmethod 4595 0x00007fe739aa6710 code [0x00007fe739aa6860, 0x00007fe739aa6990]
+Event: 10.233 Thread 0x00007fe7481a2800 4594 % !   3       com.google.common.reflect.TypeVisitor::visit @ 8 (225 bytes)
+Event: 10.235 Thread 0x00007fe7481a2800 nmethod 4594% 0x00007fe739aaca50 code [0x00007fe739aacd80, 0x00007fe739aaeb58]
+Event: 10.239 Thread 0x00007fe7481a2800 4596   !   3       com.google.common.reflect.TypeVisitor::visit (225 bytes)
+Event: 10.240 Thread 0x00007fe7481a2800 nmethod 4596 0x00007fe739aaf810 code [0x00007fe739aafb20, 0x00007fe739ab1838]
+Event: 10.254 Thread 0x00007fe748193000 nmethod 4582 0x00007fe739159250 code [0x00007fe7391593e0, 0x00007fe739159a28]
+Event: 10.254 Thread 0x00007fe748193000 4597   !   4       java.util.concurrent.ConcurrentHashMap::replaceNode (416 bytes)
+Event: 10.260 Thread 0x00007fe7481a2800 4599       2       java.nio.ByteBuffer::<init> (45 bytes)
+Event: 10.261 Thread 0x00007fe7481a2800 nmethod 4599 0x00007fe739158dd0 code [0x00007fe739158f40, 0x00007fe739159108]
+Event: 10.295 Thread 0x00007fe748193000 nmethod 4597 0x00007fe739ab7e50 code [0x00007fe739ab8060, 0x00007fe739ab90e8]
+Event: 10.295 Thread 0x00007fe748193000 4576       4       com.mojang.datafixers.types.families.RecursiveTypeFamily::buildMuType (124 bytes)
+Event: 10.302 Thread 0x00007fe7481a2800 4600       3       sun.nio.cs.UTF_8$Encoder::encodeArrayLoop (489 bytes)
+Event: 10.304 Thread 0x00007fe7481a2800 nmethod 4600 0x00007fe739aba190 code [0x00007fe739aba700, 0x00007fe739abdf68]
+Event: 10.322 Thread 0x00007fe748193000 nmethod 4576 0x00007fe739ab2790 code [0x00007fe739ab2a60, 0x00007fe739ab3db0]
+Event: 10.323 Thread 0x00007fe748193000 4602       4       com.mojang.datafixers.functions.PointFreeRule$CompAssocLeft::rewrite (44 bytes)
+Event: 10.323 Thread 0x00007fe748193000 nmethod 4602 0x00007fe739ab23d0 code [0x00007fe739ab2540, 0x00007fe739ab2628]
+Event: 10.324 Thread 0x00007fe748193000 4601       4       com.mojang.datafixers.types.templates.Product$ProductType::equals (55 bytes)
+Event: 10.326 Thread 0x00007fe748193000 nmethod 4601 0x00007fe7395ffcd0 code [0x00007fe7395ffe40, 0x00007fe739600098]
+Event: 10.326 Thread 0x00007fe748193000 4577       4       com.mojang.datafixers.types.templates.Sum$SumType::all (21 bytes)
+Event: 10.354 Thread 0x00007fe748193000 nmethod 4577 0x00007fe739ac4d50 code [0x00007fe739ac5040, 0x00007fe739ac6778]
+Event: 10.354 Thread 0x00007fe748193000 4603       4       com.mojang.datafixers.types.templates.Tag$TagType::equals (68 bytes)
+Event: 10.355 Thread 0x00007fe7481a2800 4604       3       org.apache.logging.log4j.util.ReflectionUtil::supportsFastReflection (4 bytes)
+Event: 10.355 Thread 0x00007fe7481a2800 nmethod 4604 0x00007fe7395e8f10 code [0x00007fe7395e9060, 0x00007fe7395e9190]
+Event: 10.355 Thread 0x00007fe748193000 nmethod 4603 0x00007fe739636450 code [0x00007fe7396365a0, 0x00007fe7396367d8]
+Event: 10.356 Thread 0x00007fe748193000 4578       4       com.mojang.datafixers.types.templates.Sum$SumType::mergeViews (45 bytes)
+Event: 10.360 Thread 0x00007fe7481a2800 4605       3       com.mojang.datafixers.types.templates.Named$NamedType::equals (60 bytes)
+Event: 10.360 Thread 0x00007fe7481a2800 nmethod 4605 0x00007fe73966e890 code [0x00007fe73966ea40, 0x00007fe73966f118]
+Event: 10.369 Thread 0x00007fe7481a2800 4607   !   3       org.apache.logging.log4j.util.ReflectionUtil::getCallerClass (101 bytes)
+Event: 10.370 Thread 0x00007fe7481a2800 nmethod 4607 0x00007fe7395f9c90 code [0x00007fe7395f9f00, 0x00007fe7395faf08]
+Event: 10.372 Thread 0x00007fe748193000 nmethod 4578 0x00007fe739ac8050 code [0x00007fe739ac82c0, 0x00007fe739ac9238]
+Event: 10.372 Thread 0x00007fe7481a2800 4608       3       java.util.stream.MatchOps$1MatchSink::accept (44 bytes)
+Event: 10.372 Thread 0x00007fe7481a2800 nmethod 4608 0x00007fe7397e8e90 code [0x00007fe7397e9000, 0x00007fe7397e92e8]
+Event: 10.372 Thread 0x00007fe748193000 4580       4       java.lang.Integer::numberOfLeadingZeros (76 bytes)
+Event: 10.373 Thread 0x00007fe748193000 nmethod 4580 0x00007fe7395ffa10 code [0x00007fe7395ffb40, 0x00007fe7395ffbd8]
+Event: 10.373 Thread 0x00007fe748193000 4088       4       com.mojang.datafixers.View$$Lambda$805/737641707::apply (12 bytes)
+Event: 10.374 Thread 0x00007fe748193000 nmethod 4088 0x00007fe7397e8a50 code [0x00007fe7397e8ba0, 0x00007fe7397e8cf8]
+Event: 10.380 Thread 0x00007fe7481a2800 4609       3       com.mojang.datafixers.types.families.RecursiveTypeFamily::lambda$fold$0 (44 bytes)
+Event: 10.381 Thread 0x00007fe7481a2800 nmethod 4609 0x00007fe739ab5cd0 code [0x00007fe739ab5f60, 0x00007fe739ab7318]
+Event: 10.385 Thread 0x00007fe7481a2800 4610       3       com.mojang.datafixers.types.templates.Hook::equals (69 bytes)
+Event: 10.386 Thread 0x00007fe748193000 4611       4       com.mojang.datafixers.TypeRewriteRule$All::equals (63 bytes)
+Event: 10.386 Thread 0x00007fe7481a2800 nmethod 4610 0x00007fe739491050 code [0x00007fe739491240, 0x00007fe739491cc8]
+Event: 10.387 Thread 0x00007fe748193000 nmethod 4611 0x00007fe73966ddd0 code [0x00007fe73966df40, 0x00007fe73966e0d8]
+Event: 10.391 Thread 0x00007fe748193000 4612       4       com.mojang.datafixers.TypeRewriteRule$OrElse::equals (55 bytes)
+Event: 10.392 Thread 0x00007fe748193000 nmethod 4612 0x00007fe739822550 code [0x00007fe7398226c0, 0x00007fe739822858]
+Event: 10.406 Thread 0x00007fe7481a2800 4615   !   3       sun.reflect.GeneratedMethodAccessor1::invoke (123 bytes)
+Event: 10.406 Thread 0x00007fe748193000 4617       4       sun.net.www.ParseUtil::encodePath (336 bytes)
+Event: 10.407 Thread 0x00007fe7481a2800 nmethod 4615 0x00007fe739ac3590 code [0x00007fe739ac37e0, 0x00007fe739ac47f8]
+Event: 10.451 Thread 0x00007fe7481a2800 4619       3       java.util.WeakHashMap::get (77 bytes)
+Event: 10.451 Thread 0x00007fe7481a2800 nmethod 4619 0x00007fe739493190 code [0x00007fe739493380, 0x00007fe739493c28]
+Event: 10.457 Thread 0x00007fe748193000 nmethod 4617 0x00007fe739ac09d0 code [0x00007fe739ac0b80, 0x00007fe739ac19d8]
+Event: 10.457 Thread 0x00007fe748193000 4616       4       com.mojang.datafixers.types.templates.Product$ProductType::mergeViews (45 bytes)
+Event: 10.481 Thread 0x00007fe7481a2800 4620       3       org.apache.logging.log4j.spi.LoggerRegistry::factoryKey (18 bytes)
+Event: 10.481 Thread 0x00007fe7481a2800 nmethod 4620 0x00007fe739ab5610 code [0x00007fe739ab57a0, 0x00007fe739ab5b68]
+Event: 10.481 Thread 0x00007fe7481a2800 4621       3       org.apache.logging.log4j.spi.LoggerRegistry::getOrCreateInnerMap (42 bytes)
+Event: 10.481 Thread 0x00007fe7481a2800 nmethod 4621 0x00007fe7395f9190 code [0x00007fe7395f9340, 0x00007fe7395f99b8]
+Event: 10.487 Thread 0x00007fe7481a2800 4623       1       java.lang.reflect.Field::getType (5 bytes)
+Event: 10.487 Thread 0x00007fe7481a2800 nmethod 4623 0x00007fe7397b1fd0 code [0x00007fe7397b2120, 0x00007fe7397b2230]
+Event: 10.509 Thread 0x00007fe7481a2800 4625       3       io.netty.buffer.PoolArena::newSubpagePoolHead (21 bytes)
+Event: 10.509 Thread 0x00007fe7481a2800 nmethod 4625 0x00007fe739492c50 code [0x00007fe739492dc0, 0x00007fe739493090]
+Event: 10.510 Thread 0x00007fe748193000 nmethod 4616 0x00007fe739aca610 code [0x00007fe739aca880, 0x00007fe739acb7f8]
+Event: 10.510 Thread 0x00007fe748193000 4614       4       com.mojang.datafixers.types.templates.Product$ProductType::all (21 bytes)
+Event: 10.515 Thread 0x00007fe7481a2800 4626       2       java.io.ByteArrayOutputStream::ensureCapacity (16 bytes)
+Event: 10.515 Thread 0x00007fe7481a2800 nmethod 4626 0x00007fe739aca190 code [0x00007fe739aca300, 0x00007fe739aca488]
+Event: 10.515 Thread 0x00007fe7481a2800 4627  s    2       java.io.ByteArrayOutputStream::write (32 bytes)
+Event: 10.515 Thread 0x00007fe7481a2800 nmethod 4627 0x00007fe739823f90 code [0x00007fe739824100, 0x00007fe739824448]
+Event: 10.516 Thread 0x00007fe7481a2800 4628       3       sun.reflect.generics.scope.ClassScope::make (9 bytes)
+Event: 10.516 Thread 0x00007fe7481a2800 nmethod 4628 0x00007fe739823950 code [0x00007fe739823ac0, 0x00007fe739823d90]
+Event: 10.521 Thread 0x00007fe7481a2800 4629       3       sun.misc.ProxyGenerator$ConstantPool::getString (21 bytes)
+Event: 10.521 Thread 0x00007fe7481a2800 nmethod 4629 0x00007fe739ac2bd0 code [0x00007fe739ac2da0, 0x00007fe739ac32a8]
+Event: 10.521 Thread 0x00007fe7481a2800 4630       3       sun.misc.ProxyGenerator::code_ldc (64 bytes)
+Event: 10.522 Thread 0x00007fe7481a2800 nmethod 4630 0x00007fe739acdb90 code [0x00007fe739acdda0, 0x00007fe739ace9a8]
+Event: 10.542 Thread 0x00007fe748193000 nmethod 4614 0x00007fe739acca10 code [0x00007fe739accbe0, 0x00007fe739acd348]
+Event: 10.547 Thread 0x00007fe748193000 4631       4       java.util.ArrayList$Itr::hasNext (20 bytes)
+Event: 10.547 Thread 0x00007fe748193000 nmethod 4631 0x00007fe739acc750 code [0x00007fe739acc8a0, 0x00007fe739acc938]
+Event: 10.548 Thread 0x00007fe748193000 4624       4       com.mojang.datafixers.types.families.RecursiveTypeFamily::cap2 (119 bytes)
+Event: 10.554 Thread 0x00007fe7481a2800 4635       3       org.apache.logging.log4j.core.pattern.PatternFormatter::format (26 bytes)
+Event: 10.554 Thread 0x00007fe7481a2800 nmethod 4635 0x00007fe739180c50 code [0x00007fe739180e00, 0x00007fe739181388]
+Event: 10.554 Thread 0x00007fe7481a2800 4634       3       java.lang.StringBuilder::append (6 bytes)
+Event: 10.555 Thread 0x00007fe7481a2800 nmethod 4634 0x00007fe7392783d0 code [0x00007fe739278580, 0x00007fe739278bd8]
+Event: 10.555 Thread 0x00007fe7481a2800 4636       3       java.nio.Buffer::flip (20 bytes)
+Event: 10.555 Thread 0x00007fe7481a2800 nmethod 4636 0x00007fe739139190 code [0x00007fe7391392e0, 0x00007fe739139450]
+Event: 10.559 Thread 0x00007fe7481a2800 4639       2       org.jline.utils.AttributedString::length (10 bytes)
+Event: 10.559 Thread 0x00007fe7481a2800 nmethod 4639 0x00007fe73913f3d0 code [0x00007fe73913f520, 0x00007fe73913f670]
+Event: 10.563 Thread 0x00007fe7481a2800 4642       2       java.util.Arrays::asList (9 bytes)
+Event: 10.563 Thread 0x00007fe7481a2800 nmethod 4642 0x00007fe739266b50 code [0x00007fe739266cc0, 0x00007fe739266f08]
+Event: 10.564 Thread 0x00007fe7481a2800 4643       2       java.util.Arrays$ArrayList::<init> (16 bytes)
+Event: 10.564 Thread 0x00007fe7481a2800 nmethod 4643 0x00007fe7393992d0 code [0x00007fe739399440, 0x00007fe739399668]
+Event: 10.607 Thread 0x00007fe7481a2800 4644       2       com.mojang.datafixers.optics.Inj2::equals (5 bytes)
+Event: 10.607 Thread 0x00007fe7481a2800 nmethod 4644 0x00007fe73922b610 code [0x00007fe73922b760, 0x00007fe73922b8f0]
+Event: 10.611 Thread 0x00007fe748193000 nmethod 4624 0x00007fe739acf3d0 code [0x00007fe739acf680, 0x00007fe739ad0a28]
+Event: 10.611 Thread 0x00007fe748193000 4637       4       com.mojang.datafixers.types.templates.Tag$TagType::cap (38 bytes)
+Event: 10.614 Thread 0x00007fe748193000 nmethod 4637 0x00007fe739115590 code [0x00007fe739115700, 0x00007fe7391159b8]
+Event: 10.614 Thread 0x00007fe748193000 4640       4       com.mojang.datafixers.types.templates.Named$$Lambda$316/46627301::apply (13 bytes)
+Event: 10.616 Thread 0x00007fe748193000 nmethod 4640 0x00007fe739160dd0 code [0x00007fe739160f20, 0x00007fe739161078]
+Event: 10.616 Thread 0x00007fe748193000 4645       4       com.mojang.datafixers.optics.Prism::eval (13 bytes)
+Event: 10.617 Thread 0x00007fe748193000 nmethod 4645 0x00007fe73931e290 code [0x00007fe73931e3e0, 0x00007fe73931e518]
+Event: 10.618 Thread 0x00007fe748193000 4633       4       com.mojang.datafixers.types.templates.Tag$TagType::all (28 bytes)
+Event: 10.625 Thread 0x00007fe748193000 nmethod 4633 0x00007fe739111150 code [0x00007fe739111320, 0x00007fe739111a18]
+Event: 10.625 Thread 0x00007fe748193000 4641       4       com.mojang.datafixers.types.templates.Named::apply (8 bytes)
+Event: 10.626 Thread 0x00007fe748193000 nmethod 4641 0x00007fe739141a10 code [0x00007fe739141b60, 0x00007fe739141c58]
+Event: 10.626 Thread 0x00007fe748193000 4638       4       java.util.ArrayList::<init> (12 bytes)
+Event: 10.627 Thread 0x00007fe748193000 nmethod 4638 0x00007fe73938fd50 code [0x00007fe73938fea0, 0x00007fe73938ff18]
+Event: 10.627 Thread 0x00007fe748193000 4622       4       java.lang.String::concat (47 bytes)
+Event: 10.632 Thread 0x00007fe748193000 nmethod 4622 0x00007fe73947e190 code [0x00007fe73947e300, 0x00007fe73947e6b8]
+Event: 10.632 Thread 0x00007fe748193000 4618   !   4       java.util.zip.ZipFile$ZipFileInputStream::close (110 bytes)
+Event: 10.638 Thread 0x00007fe748193000 nmethod 4618 0x00007fe739482710 code [0x00007fe7394828c0, 0x00007fe7394831a8]
+Event: 10.638 Thread 0x00007fe748193000 4613       4       java.lang.reflect.AccessibleObject::<init> (5 bytes)
+Event: 10.638 Thread 0x00007fe748193000 nmethod 4613 0x00007fe739490e50 code [0x00007fe739490fa0, 0x00007fe739490ff8]
+Event: 10.638 Thread 0x00007fe748193000 4632       4       com.mojang.datafixers.optics.Inj1::<init> (5 bytes)
+Event: 10.638 Thread 0x00007fe748193000 nmethod 4632 0x00007fe739447510 code [0x00007fe739447660, 0x00007fe7394476b8]
+Event: 10.643 Thread 0x00007fe7481a2800 4646       3       com.mojang.datafixers.types.templates.Check$CheckType::hashCode (35 bytes)
+Event: 10.644 Thread 0x00007fe7481a2800 nmethod 4646 0x00007fe73918a210 code [0x00007fe73918a400, 0x00007fe73918af08]
+Event: 10.644 Thread 0x00007fe7481a2800 4649       3       com.mojang.datafixers.types.families.RecursiveTypeFamily::apply (6 bytes)
+Event: 10.644 Thread 0x00007fe7481a2800 nmethod 4649 0x00007fe739484290 code [0x00007fe739484480, 0x00007fe739484ce8]
+Event: 10.644 Thread 0x00007fe748193000 4648       4       com.mojang.datafixers.types.templates.RecursivePoint$RecursivePointType::everywhere (34 bytes)
+Event: 10.647 Thread 0x00007fe7481a2800 4650       3       com.mojang.datafixers.types.templates.TaggedChoice$TaggedChoiceType::equals (162 bytes)
+Event: 10.647 Thread 0x00007fe7481a2800 nmethod 4650 0x00007fe7396fba90 code [0x00007fe7396fbd20, 0x00007fe7396fcef8]
+Event: 10.657 Thread 0x00007fe7481a2800 4652       3       com.google.common.collect.ImmutableCollection$ArrayBasedBuilder::<init> (25 bytes)
+Event: 10.657 Thread 0x00007fe7481a2800 nmethod 4652 0x00007fe73928ab50 code [0x00007fe73928ace0, 0x00007fe73928afe8]
+Event: 10.668 Thread 0x00007fe7481a2800 4653       3       com.mojang.datafixers.types.templates.TaggedChoice$TaggedChoiceType$$Lambda$796/1419914259::apply (8 bytes)
+Event: 10.668 Thread 0x00007fe7481a2800 nmethod 4653 0x00007fe73914c750 code [0x00007fe73914c8e0, 0x00007fe73914cd08]
+Event: 10.668 Thread 0x00007fe7481a2800 4654       3       com.mojang.datafixers.types.templates.TaggedChoice$TaggedChoiceType$$Lambda$797/1290258485::apply (8 bytes)
+Event: 10.668 Thread 0x00007fe7481a2800 nmethod 4654 0x00007fe7394f0810 code [0x00007fe7394f0980, 0x00007fe7394f0bf0]
+Event: 10.668 Thread 0x00007fe7481a2800 4655       3       com.mojang.datafixers.types.templates.TaggedChoice$TaggedChoiceType$$Lambda$798/906811040::apply (8 bytes)
+Event: 10.668 Thread 0x00007fe7481a2800 nmethod 4655 0x00007fe739542110 code [0x00007fe739542280, 0x00007fe7395424f0]
+Event: 10.694 Thread 0x00007fe7481a2800 4657       3       com.mojang.datafixers.types.templates.Hook$HookType::buildTemplate (19 bytes)
+Event: 10.694 Thread 0x00007fe7481a2800 nmethod 4657 0x00007fe73914d3d0 code [0x00007fe73914d560, 0x00007fe73914daa8]
+Event: 10.720 Thread 0x00007fe7481a2800 4659 %     3       com.mojang.datafixers.types.families.RecursiveTypeFamily::everywhere @ 65 (261 bytes)
+Event: 10.724 Thread 0x00007fe7481a2800 nmethod 4659% 0x00007fe7397ecb50 code [0x00007fe7397ed1e0, 0x00007fe7397f2338]
+Event: 10.768 Thread 0x00007fe7481a2800 4660       1       com.google.common.collect.RegularImmutableSet::size (6 bytes)
+Event: 10.769 Thread 0x00007fe7481a2800 nmethod 4660 0x00007fe7393e6550 code [0x00007fe7393e66a0, 0x00007fe7393e67b0]
+Event: 10.817 Thread 0x00007fe748193000 nmethod 4648 0x00007fe739852750 code [0x00007fe739852ba0, 0x00007fe739855478]
+Event: 10.817 Thread 0x00007fe748193000 4651       4       com.mojang.datafixers.types.templates.Hook::equals (69 bytes)
+Event: 10.819 Thread 0x00007fe748193000 nmethod 4651 0x00007fe739138050 code [0x00007fe7391381c0, 0x00007fe7391383d8]
+Event: 10.819 Thread 0x00007fe748193000 4658       4       com.mojang.datafixers.types.templates.Named::hashCode (22 bytes)
+Event: 10.822 Thread 0x00007fe748193000 nmethod 4658 0x00007fe73967bc90 code [0x00007fe73967bde0, 0x00007fe73967bf78]
+Event: 10.822 Thread 0x00007fe748193000 4647       4       com.mojang.datafixers.types.templates.Named$NamedType::equals (60 bytes)
+Event: 10.832 Thread 0x00007fe748193000 nmethod 4647 0x00007fe739228f10 code [0x00007fe739229060, 0x00007fe7392292b8]
+Event: 10.832 Thread 0x00007fe748193000 4661       4       com.mojang.datafixers.functions.ProfunctorTransformer::equals (41 bytes)
+Event: 10.833 Thread 0x00007fe748193000 nmethod 4661 0x00007fe73967a4d0 code [0x00007fe73967a620, 0x00007fe73967a6f8]
+Event: 10.833 Thread 0x00007fe748193000 4662       4       com.mojang.datafixers.optics.Prism::eval (8 bytes)
+Event: 10.834 Thread 0x00007fe748193000 nmethod 4662 0x00007fe73913b610 code [0x00007fe73913b780, 0x00007fe73913b8d8]
+Event: 10.834 Thread 0x00007fe748193000 4656       4       java.net.URLClassLoader$1::run (5 bytes)
+Event: 10.846 Thread 0x00007fe7481a2800 4664       3       java.util.stream.Collectors$$Lambda$132/1784131088::get (8 bytes)
+Event: 10.846 Thread 0x00007fe7481a2800 nmethod 4664 0x00007fe73943ad50 code [0x00007fe73943aec0, 0x00007fe73943b190]
+Event: 10.882 Thread 0x00007fe7481a2800 4667       3       com.mojang.datafixers.types.templates.Named$NamedType::equals (60 bytes)
+Event: 10.883 Thread 0x00007fe7481a2800 nmethod 4667 0x00007fe739118890 code [0x00007fe739118a40, 0x00007fe739119118]
+Event: 10.895 Thread 0x00007fe7481a2800 4668       3       com.mojang.datafixers.types.families.RecursiveTypeFamily$$Lambda$830/1694095765::apply (13 bytes)
+Event: 10.895 Thread 0x00007fe7481a2800 nmethod 4668 0x00007fe739389610 code [0x00007fe739389780, 0x00007fe739389928]
+Event: 10.947 Thread 0x00007fe7481a2800 4671       3       com.mojang.datafixers.DataFix::getRule (20 bytes)
+Event: 10.947 Thread 0x00007fe7481a2800 nmethod 4671 0x00007fe7392215d0 code [0x00007fe739221740, 0x00007fe7392219c8]
+Event: 11.195 Thread 0x00007fe7481a2800 4672       3       com.mojang.datafixers.DataFixUtils::getVersion (5 bytes)
+Event: 11.195 Thread 0x00007fe7481a2800 nmethod 4672 0x00007fe739728650 code [0x00007fe7397287a0, 0x00007fe7397288f0]
+Event: 11.910 Thread 0x00007fe748193000 nmethod 4656 0x00007fe739adf690 code [0x00007fe739ae0340, 0x00007fe739aebe48]
+Event: 11.910 Thread 0x00007fe748193000 4663       4       com.mojang.datafixers.types.templates.RecursivePoint::apply (21 bytes)
+Event: 11.920 Thread 0x00007fe748193000 nmethod 4663 0x00007fe739700490 code [0x00007fe739700660, 0x00007fe739700ef0]
+Event: 11.921 Thread 0x00007fe748193000 4666       4       java.util.Spliterators$IteratorSpliterator::estimateSize (41 bytes)
+Event: 11.933 Thread 0x00007fe748193000 nmethod 4666 0x00007fe7391f92d0 code [0x00007fe7391f9460, 0x00007fe7391f96f8]
+Event: 11.933 Thread 0x00007fe748193000 4669       4       com.mojang.datafixers.types.templates.Product::size (22 bytes)
+Event: 11.935 Thread 0x00007fe748193000 nmethod 4669 0x00007fe739702b10 code [0x00007fe739702c80, 0x00007fe739702df8]
+Event: 11.935 Thread 0x00007fe748193000 4670       4       com.mojang.datafixers.types.templates.Tag::size (10 bytes)
+Event: 11.935 Thread 0x00007fe748193000 nmethod 4670 0x00007fe739185c90 code [0x00007fe739185de0, 0x00007fe739185e78]
+Event: 11.936 Thread 0x00007fe748193000 4665       4       com.mojang.datafixers.types.templates.Check$CheckType::everywhere (30 bytes)
+Event: 11.936 Thread 0x00007fe748193000 nmethod 4665 0x00007fe73939b490 code [0x00007fe73939b5e0, 0x00007fe73939b688]
+Event: 11.947 Thread 0x00007fe7481a2800 4673       3       com.mojang.datafixers.functions.Apply$$Lambda$823/997286715::apply (12 bytes)
+Event: 11.948 Thread 0x00007fe7481a2800 nmethod 4673 0x00007fe7392aad10 code [0x00007fe7392aaea0, 0x00007fe7392ab370]
+Event: 11.948 Thread 0x00007fe7481a2800 4674       3       com.mojang.datafixers.optics.IdAdapter::equals (5 bytes)
+Event: 11.949 Thread 0x00007fe7481a2800 nmethod 4674 0x00007fe739241ed0 code [0x00007fe739242040, 0x00007fe739242290]
+Event: 12.004 Thread 0x00007fe7481a2800 4675       3       com.mojang.datafixers.functions.PointFreeRule$CompRewrite::buildLeftNested (37 bytes)
+Event: 12.004 Thread 0x00007fe7481a2800 nmethod 4675 0x00007fe73961f250 code [0x00007fe73961f3e0, 0x00007fe73961f8d0]
+Event: 12.047 Thread 0x00007fe748193000 4676       4       com.mojang.datafixers.functions.Apply$$Lambda$823/997286715::apply (12 bytes)
+Event: 12.049 Thread 0x00007fe748193000 nmethod 4676 0x00007fe7397b90d0 code [0x00007fe7397b9220, 0x00007fe7397b9378]
+Event: 12.121 Thread 0x00007fe7481a2800 4677       3       com.mojang.datafixers.functions.PointFreeRule$CompAssocLeft::swap (40 bytes)
+Event: 12.121 Thread 0x00007fe7481a2800 nmethod 4677 0x00007fe739549850 code [0x00007fe739549a00, 0x00007fe73954a0d0]
+Event: 12.136 Thread 0x00007fe748193000 4678       4       com.mojang.datafixers.optics.IdAdapter::equals (5 bytes)
+Event: 12.137 Thread 0x00007fe748193000 nmethod 4678 0x00007fe7394ba410 code [0x00007fe7394ba560, 0x00007fe7394ba5d8]
+Event: 12.164 Thread 0x00007fe748193000 4679       4       com.mojang.datafixers.functions.PointFreeRule$CompRewrite::buildLeftNested (37 bytes)
+Event: 12.166 Thread 0x00007fe748193000 nmethod 4679 0x00007fe739389d90 code [0x00007fe739389ee0, 0x00007fe73938a098]
+Event: 12.255 Thread 0x00007fe748193000 4680       4       com.mojang.datafixers.functions.Apply::lambda$null$4 (13 bytes)
+Event: 12.256 Thread 0x00007fe748193000 nmethod 4680 0x00007fe739686450 code [0x00007fe7396865a0, 0x00007fe739686698]
+Event: 12.256 Thread 0x00007fe748193000 4681       4       com.mojang.datafixers.functions.Apply$$Lambda$823/997286715::apply (12 bytes)
+Event: 12.258 Thread 0x00007fe748193000 nmethod 4681 0x00007fe739425310 code [0x00007fe739425460, 0x00007fe7394255b8]
+Event: 12.306 Thread 0x00007fe7481a2800 4682       3       com.mojang.datafixers.functions.PointFreeRule$CompRewrite$$Lambda$815/260929760::apply (12 bytes)
+Event: 12.307 Thread 0x00007fe7481a2800 nmethod 4682 0x00007fe739635850 code [0x00007fe739635a00, 0x00007fe739636128]
+Event: 12.318 Thread 0x00007fe7481a2800 4683       3       com.mojang.datafixers.functions.PointFreeRule$CompRewrite::buildRight (17 bytes)
+Event: 12.319 Thread 0x00007fe7481a2800 nmethod 4683 0x00007fe739143e50 code [0x00007fe739143fc0, 0x00007fe7391442d0]
+Event: 12.469 Thread 0x00007fe7481a2800 4684       3       com.mojang.datafixers.optics.Inj1::equals (5 bytes)
+Event: 12.469 Thread 0x00007fe7481a2800 nmethod 4684 0x00007fe739472810 code [0x00007fe739472980, 0x00007fe739472bd0]
+Event: 12.471 Thread 0x00007fe7481a2800 4685       3       com.mojang.datafixers.optics.ListTraversal::equals (5 bytes)
+Event: 12.471 Thread 0x00007fe7481a2800 nmethod 4685 0x00007fe7394f5710 code [0x00007fe7394f5880, 0x00007fe7394f5ad0]
+Event: 12.472 Thread 0x00007fe7481a2800 4686       3       it.unimi.dsi.fastutil.ints.IntAVLTreeSet$Entry::left (19 bytes)
+Event: 12.472 Thread 0x00007fe7481a2800 nmethod 4686 0x00007fe739463010 code [0x00007fe739463180, 0x00007fe739463350]
+Event: 12.473 Thread 0x00007fe7481a2800 4687       3       com.mojang.datafixers.functions.PointFreeRule$LensComp::cap2 (40 bytes)
+Event: 12.474 Thread 0x00007fe7481a2800 nmethod 4687 0x00007fe739276250 code [0x00007fe7392764a0, 0x00007fe7392775b8]
+Event: 12.474 Thread 0x00007fe7481a2800 4688       3       com.mojang.datafixers.functions.PointFreeRule$LensComp::cap (14 bytes)
+Event: 12.474 Thread 0x00007fe7481a2800 nmethod 4688 0x00007fe739701cd0 code [0x00007fe739701e40, 0x00007fe739701fc8]
+Event: 12.527 Thread 0x00007fe7481a2800 4689       1       org.jline.terminal.impl.AbstractPty::access$000 (5 bytes)
+Event: 12.527 Thread 0x00007fe7481a2800 nmethod 4689 0x00007fe739896890 code [0x00007fe7398969e0, 0x00007fe739896ad0]
+
+GC Heap History (15 events):
+Event: 1.716 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 305664K, used 262144K [0x000000076ec00000, 0x0000000784100000, 0x00000007c0000000)
+  eden space 262144K, 100% used [0x000000076ec00000,0x000000077ec00000,0x000000077ec00000)
+  from space 43520K, 0% used [0x0000000781680000,0x0000000781680000,0x0000000784100000)
+  to   space 43520K, 0% used [0x000000077ec00000,0x000000077ec00000,0x0000000781680000)
+ ParOldGen       total 699392K, used 0K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 0% used [0x00000006cc400000,0x00000006cc400000,0x00000006f6f00000)
+ Metaspace       used 16960K, capacity 17328K, committed 17536K, reserved 1064960K
+  class space    used 1937K, capacity 2091K, committed 2176K, reserved 1048576K
+Event: 1.739 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 305664K, used 14213K [0x000000076ec00000, 0x0000000794100000, 0x00000007c0000000)
+  eden space 262144K, 0% used [0x000000076ec00000,0x000000076ec00000,0x000000077ec00000)
+  from space 43520K, 32% used [0x000000077ec00000,0x000000077f9e1628,0x0000000781680000)
+  to   space 43520K, 0% used [0x0000000791680000,0x0000000791680000,0x0000000794100000)
+ ParOldGen       total 699392K, used 80K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 0% used [0x00000006cc400000,0x00000006cc414010,0x00000006f6f00000)
+ Metaspace       used 16960K, capacity 17328K, committed 17536K, reserved 1064960K
+  class space    used 1937K, capacity 2091K, committed 2176K, reserved 1048576K
+}
+Event: 2.024 GC heap before
+{Heap before GC invocations=2 (full 0):
+ PSYoungGen      total 305664K, used 36988K [0x000000076ec00000, 0x0000000794100000, 0x00000007c0000000)
+  eden space 262144K, 8% used [0x000000076ec00000,0x000000077023dad8,0x000000077ec00000)
+  from space 43520K, 32% used [0x000000077ec00000,0x000000077f9e1628,0x0000000781680000)
+  to   space 43520K, 0% used [0x0000000791680000,0x0000000791680000,0x0000000794100000)
+ ParOldGen       total 699392K, used 80K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 0% used [0x00000006cc400000,0x00000006cc414010,0x00000006f6f00000)
+ Metaspace       used 20762K, capacity 21104K, committed 21296K, reserved 1069056K
+  class space    used 2487K, capacity 2625K, committed 2688K, reserved 1048576K
+Event: 2.049 GC heap after
+Heap after GC invocations=2 (full 0):
+ PSYoungGen      total 567808K, used 13360K [0x000000076ec00000, 0x0000000794100000, 0x00000007c0000000)
+  eden space 524288K, 0% used [0x000000076ec00000,0x000000076ec00000,0x000000078ec00000)
+  from space 43520K, 30% used [0x0000000791680000,0x000000079238c258,0x0000000794100000)
+  to   space 43520K, 0% used [0x000000078ec00000,0x000000078ec00000,0x0000000791680000)
+ ParOldGen       total 699392K, used 88K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 0% used [0x00000006cc400000,0x00000006cc416010,0x00000006f6f00000)
+ Metaspace       used 20762K, capacity 21104K, committed 21296K, reserved 1069056K
+  class space    used 2487K, capacity 2625K, committed 2688K, reserved 1048576K
+}
+Event: 2.049 GC heap before
+{Heap before GC invocations=3 (full 1):
+ PSYoungGen      total 567808K, used 13360K [0x000000076ec00000, 0x0000000794100000, 0x00000007c0000000)
+  eden space 524288K, 0% used [0x000000076ec00000,0x000000076ec00000,0x000000078ec00000)
+  from space 43520K, 30% used [0x0000000791680000,0x000000079238c258,0x0000000794100000)
+  to   space 43520K, 0% used [0x000000078ec00000,0x000000078ec00000,0x0000000791680000)
+ ParOldGen       total 699392K, used 88K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 0% used [0x00000006cc400000,0x00000006cc416010,0x00000006f6f00000)
+ Metaspace       used 20762K, capacity 21104K, committed 21296K, reserved 1069056K
+  class space    used 2487K, capacity 2625K, committed 2688K, reserved 1048576K
+Event: 2.101 GC heap after
+Heap after GC invocations=3 (full 1):
+ PSYoungGen      total 567808K, used 0K [0x000000076ec00000, 0x0000000794100000, 0x00000007c0000000)
+  eden space 524288K, 0% used [0x000000076ec00000,0x000000076ec00000,0x000000078ec00000)
+  from space 43520K, 0% used [0x0000000791680000,0x0000000791680000,0x0000000794100000)
+  to   space 43520K, 0% used [0x000000078ec00000,0x000000078ec00000,0x0000000791680000)
+ ParOldGen       total 699392K, used 12776K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 1% used [0x00000006cc400000,0x00000006cd07a0d0,0x00000006f6f00000)
+ Metaspace       used 20762K, capacity 21104K, committed 21296K, reserved 1069056K
+  class space    used 2487K, capacity 2625K, committed 2688K, reserved 1048576K
+}
+Event: 5.451 GC heap before
+{Heap before GC invocations=4 (full 1):
+ PSYoungGen      total 567808K, used 358748K [0x000000076ec00000, 0x0000000794100000, 0x00000007c0000000)
+  eden space 524288K, 68% used [0x000000076ec00000,0x0000000784a57320,0x000000078ec00000)
+  from space 43520K, 0% used [0x0000000791680000,0x0000000791680000,0x0000000794100000)
+  to   space 43520K, 0% used [0x000000078ec00000,0x000000078ec00000,0x0000000791680000)
+ ParOldGen       total 699392K, used 12776K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 1% used [0x00000006cc400000,0x00000006cd07a0d0,0x00000006f6f00000)
+ Metaspace       used 33350K, capacity 35455K, committed 35496K, reserved 1079296K
+  class space    used 4505K, capacity 5007K, committed 5032K, reserved 1048576K
+Event: 5.580 GC heap after
+Heap after GC invocations=4 (full 1):
+ PSYoungGen      total 567808K, used 43509K [0x000000076ec00000, 0x00000007a8800000, 0x00000007c0000000)
+  eden space 524288K, 0% used [0x000000076ec00000,0x000000076ec00000,0x000000078ec00000)
+  from space 43520K, 99% used [0x000000078ec00000,0x000000079167d518,0x0000000791680000)
+  to   space 43520K, 0% used [0x00000007a5d80000,0x00000007a5d80000,0x00000007a8800000)
+ ParOldGen       total 699392K, used 24853K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 3% used [0x00000006cc400000,0x00000006cdc45670,0x00000006f6f00000)
+ Metaspace       used 33350K, capacity 35455K, committed 35496K, reserved 1079296K
+  class space    used 4505K, capacity 5007K, committed 5032K, reserved 1048576K
+}
+Event: 5.580 GC heap before
+{Heap before GC invocations=5 (full 2):
+ PSYoungGen      total 567808K, used 43509K [0x000000076ec00000, 0x00000007a8800000, 0x00000007c0000000)
+  eden space 524288K, 0% used [0x000000076ec00000,0x000000076ec00000,0x000000078ec00000)
+  from space 43520K, 99% used [0x000000078ec00000,0x000000079167d518,0x0000000791680000)
+  to   space 43520K, 0% used [0x00000007a5d80000,0x00000007a5d80000,0x00000007a8800000)
+ ParOldGen       total 699392K, used 24853K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 3% used [0x00000006cc400000,0x00000006cdc45670,0x00000006f6f00000)
+ Metaspace       used 33350K, capacity 35455K, committed 35496K, reserved 1079296K
+  class space    used 4505K, capacity 5007K, committed 5032K, reserved 1048576K
+Event: 6.064 GC heap after
+Heap after GC invocations=5 (full 2):
+ PSYoungGen      total 567808K, used 0K [0x000000076ec00000, 0x00000007a8800000, 0x00000007c0000000)
+  eden space 524288K, 0% used [0x000000076ec00000,0x000000076ec00000,0x000000078ec00000)
+  from space 43520K, 0% used [0x000000078ec00000,0x000000078ec00000,0x0000000791680000)
+  to   space 43520K, 0% used [0x00000007a5d80000,0x00000007a5d80000,0x00000007a8800000)
+ ParOldGen       total 699392K, used 64931K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 9% used [0x00000006cc400000,0x00000006d0368f28,0x00000006f6f00000)
+ Metaspace       used 33340K, capacity 35423K, committed 35496K, reserved 1079296K
+  class space    used 4502K, capacity 5001K, committed 5032K, reserved 1048576K
+}
+Event: 8.935 GC heap before
+{Heap before GC invocations=6 (full 2):
+ PSYoungGen      total 567808K, used 524288K [0x000000076ec00000, 0x00000007a8800000, 0x00000007c0000000)
+  eden space 524288K, 100% used [0x000000076ec00000,0x000000078ec00000,0x000000078ec00000)
+  from space 43520K, 0% used [0x000000078ec00000,0x000000078ec00000,0x0000000791680000)
+  to   space 43520K, 0% used [0x00000007a5d80000,0x00000007a5d80000,0x00000007a8800000)
+ ParOldGen       total 699392K, used 64931K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 9% used [0x00000006cc400000,0x00000006d0368f28,0x00000006f6f00000)
+ Metaspace       used 45385K, capacity 49167K, committed 49448K, reserved 1091584K
+  class space    used 6302K, capacity 7338K, committed 7464K, reserved 1048576K
+Event: 9.044 GC heap after
+Heap after GC invocations=6 (full 2):
+ PSYoungGen      total 749568K, used 37948K [0x000000076ec00000, 0x00000007a8300000, 0x00000007c0000000)
+  eden space 711168K, 0% used [0x000000076ec00000,0x000000076ec00000,0x000000079a280000)
+  from space 38400K, 98% used [0x00000007a5d80000,0x00000007a828f240,0x00000007a8300000)
+  to   space 43520K, 0% used [0x00000007a2e00000,0x00000007a2e00000,0x00000007a5880000)
+ ParOldGen       total 699392K, used 64939K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 9% used [0x00000006cc400000,0x00000006d036af28,0x00000006f6f00000)
+ Metaspace       used 45385K, capacity 49167K, committed 49448K, reserved 1091584K
+  class space    used 6302K, capacity 7338K, committed 7464K, reserved 1048576K
+}
+Event: 11.411 GC heap before
+{Heap before GC invocations=7 (full 2):
+ PSYoungGen      total 749568K, used 749116K [0x000000076ec00000, 0x00000007a8300000, 0x00000007c0000000)
+  eden space 711168K, 100% used [0x000000076ec00000,0x000000079a280000,0x000000079a280000)
+  from space 38400K, 98% used [0x00000007a5d80000,0x00000007a828f240,0x00000007a8300000)
+  to   space 43520K, 0% used [0x00000007a2e00000,0x00000007a2e00000,0x00000007a5880000)
+ ParOldGen       total 699392K, used 64939K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 9% used [0x00000006cc400000,0x00000006d036af28,0x00000006f6f00000)
+ Metaspace       used 47240K, capacity 51099K, committed 51496K, reserved 1093632K
+  class space    used 6549K, capacity 7598K, committed 7720K, reserved 1048576K
+Event: 11.592 GC heap after
+Heap after GC invocations=7 (full 2):
+ PSYoungGen      total 897536K, used 43492K [0x000000076ec00000, 0x00000007b2f00000, 0x00000007c0000000)
+  eden space 854016K, 0% used [0x000000076ec00000,0x000000076ec00000,0x00000007a2e00000)
+  from space 43520K, 99% used [0x00000007a2e00000,0x00000007a58792a8,0x00000007a5880000)
+  to   space 61952K, 0% used [0x00000007af280000,0x00000007af280000,0x00000007b2f00000)
+ ParOldGen       total 699392K, used 65985K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 9% used [0x00000006cc400000,0x00000006d0470648,0x00000006f6f00000)
+ Metaspace       used 47240K, capacity 51099K, committed 51496K, reserved 1093632K
+  class space    used 6549K, capacity 7598K, committed 7720K, reserved 1048576K
+}
+Event: 12.806 GC heap before
+{Heap before GC invocations=8 (full 2):
+ PSYoungGen      total 897536K, used 897508K [0x000000076ec00000, 0x00000007b2f00000, 0x00000007c0000000)
+  eden space 854016K, 100% used [0x000000076ec00000,0x00000007a2e00000,0x00000007a2e00000)
+  from space 43520K, 99% used [0x00000007a2e00000,0x00000007a58792a8,0x00000007a5880000)
+  to   space 61952K, 0% used [0x00000007af280000,0x00000007af280000,0x00000007b2f00000)
+ ParOldGen       total 699392K, used 65985K [0x00000006cc400000, 0x00000006f6f00000, 0x000000076ec00000)
+  object space 699392K, 9% used [0x00000006cc400000,0x00000006d0470648,0x00000006f6f00000)
+ Metaspace       used 47240K, capacity 51099K, committed 51496K, reserved 1093632K
+  class space    used 6549K, capacity 7598K, committed 7720K, reserved 1048576K
+
+Deoptimization events (179 events):
+Event: 0.651 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7391420f4 method=sun.security.provider.DigestBase.implCompressMultiBlock0([BII)I @ 2
+Event: 0.940 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7391dbdd0 method=java.lang.String.indexOf([CII[CIII)I @ 3
+Event: 1.092 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739213384 method=sun.misc.MetaIndex.mayContain(Ljava/lang/String;)Z @ 38
+Event: 1.114 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739222a28 method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 129
+Event: 1.114 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73921a374 method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 129
+Event: 1.116 Thread 0x00007fe74804c800 Uncommon trap: reason=range_check action=make_not_entrant pc=0x00007fe73920ce08 method=sun.reflect.generics.parser.SignatureParser.current()C @ 34
+Event: 1.153 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73919ce88 method=java.lang.String.startsWith(Ljava/lang/String;I)Z @ 25
+Event: 1.308 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7392b8c00 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 203
+Event: 1.330 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7392b8c00 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 203
+Event: 1.412 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7392b8c00 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 203
+Event: 1.420 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7392b8c00 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 203
+Event: 1.565 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7392fe028 method=java.nio.charset.CoderResult.isOverflow()Z @ 5
+Event: 2.135 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7393ccee8 method=net.minecraft.server.v1_14_R1.MinecraftKey.b(I)Z @ 39
+Event: 2.135 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7393b7334 method=net.minecraft.server.v1_14_R1.MinecraftKey.b(I)Z @ 39
+Event: 2.135 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7393c164c method=net.minecraft.server.v1_14_R1.MinecraftKey.b(I)Z @ 39
+Event: 2.202 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73938dc1c method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 203
+Event: 2.202 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73938dc1c method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 203
+Event: 2.203 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73938dc1c method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 203
+Event: 2.203 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73938dc1c method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 203
+Event: 2.371 Thread 0x00007fe74804c800 Uncommon trap: reason=predicate action=maybe_recompile pc=0x00007fe7394eb8d0 method=com.google.common.collect.RegularImmutableMap.fromEntryArray(I[Ljava/util/Map$Entry;)Lcom/google/common/collect/RegularImmutableMap; @ 51
+Event: 2.388 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394e7d50 method=com.google.common.collect.ArrayTable.put(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; @ 48
+Event: 2.388 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394e2a5c method=com.google.common.collect.ArrayTable.set(IILjava/lang/Object;)Ljava/lang/Object; @ 17
+Event: 2.388 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394e7d50 method=com.google.common.collect.ArrayTable.put(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; @ 48
+Event: 2.388 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394e2a5c method=com.google.common.collect.ArrayTable.set(IILjava/lang/Object;)Ljava/lang/Object; @ 17
+Event: 2.396 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394e7d50 method=com.google.common.collect.ArrayTable.put(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; @ 48
+Event: 2.396 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394e2a5c method=com.google.common.collect.ArrayTable.set(IILjava/lang/Object;)Ljava/lang/Object; @ 17
+Event: 2.396 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394e7d50 method=com.google.common.collect.ArrayTable.put(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; @ 48
+Event: 2.396 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394e2a5c method=com.google.common.collect.ArrayTable.set(IILjava/lang/Object;)Ljava/lang/Object; @ 17
+Event: 2.397 Thread 0x00007fe74804c800 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x00007fe73943f594 method=com.google.common.collect.AbstractIndexedListIterator.next()Ljava/lang/Object; @ 27
+Event: 2.403 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7394dcc8c method=java.lang.Boolean.equals(Ljava/lang/Object;)Z @ 18
+Event: 2.406 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7394c18f4 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 162
+Event: 2.408 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7394809cc method=java.util.HashMap.resize()[Ljava/util/HashMap$Node; @ 206
+Event: 2.411 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7394ba81c method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 84
+Event: 2.411 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739303b04 method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 84
+Event: 2.412 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7394cebec method=com.google.common.collect.StandardTable$ColumnKeyIterator.computeNext()Ljava/lang/Object; @ 40
+Event: 2.412 Thread 0x00007fe74804c800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x00007fe739506670 method=com.google.common.collect.RegularImmutableMap.fromEntryArray(I[Ljava/util/Map$Entry;)Lcom/google/common/collect/RegularImmutableMap; @ 189
+Event: 2.413 Thread 0x00007fe74804c800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x00007fe739506670 method=com.google.common.collect.RegularImmutableMap.fromEntryArray(I[Ljava/util/Map$Entry;)Lcom/google/common/collect/RegularImmutableMap; @ 189
+Event: 2.413 Thread 0x00007fe74804c800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x00007fe739506670 method=com.google.common.collect.RegularImmutableMap.fromEntryArray(I[Ljava/util/Map$Entry;)Lcom/google/common/collect/RegularImmutableMap; @ 189
+Event: 2.413 Thread 0x00007fe74804c800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x00007fe739506670 method=com.google.common.collect.RegularImmutableMap.fromEntryArray(I[Ljava/util/Map$Entry;)Lcom/google/common/collect/RegularImmutableMap; @ 189
+Event: 2.482 Thread 0x00007fe74804c800 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x00007fe73943f594 method=com.google.common.collect.AbstractIndexedListIterator.next()Ljava/lang/Object; @ 27
+Event: 2.560 Thread 0x00007fe74804c800 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x00007fe73943f594 method=com.google.common.collect.AbstractIndexedListIterator.next()Ljava/lang/Object; @ 27
+Event: 2.636 Thread 0x00007fe74804c800 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x00007fe73943f594 method=com.google.common.collect.AbstractIndexedListIterator.next()Ljava/lang/Object; @ 27
+Event: 2.671 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73952b7cc method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 109
+Event: 3.088 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7394e0c3c method=com.google.common.collect.ImmutableMap$Builder.ensureCapacity(I)V @ 6
+Event: 3.088 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739518558 method=com.google.common.collect.RegularImmutableMap.fromEntryArray(I[Ljava/util/Map$Entry;)Lcom/google/common/collect/RegularImmutableMap; @ 10
+Event: 3.167 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73954c458 method=java.util.AbstractCollection.toArray()[Ljava/lang/Object; @ 1
+Event: 3.167 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7392d31f0 method=java.util.HashMap.hash(Ljava/lang/Object;)I @ 1
+Event: 3.168 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73954c458 method=java.util.AbstractCollection.toArray()[Ljava/lang/Object; @ 1
+Event: 3.168 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73921a7a8 method=java.util.HashMap.hash(Ljava/lang/Object;)I @ 1
+Event: 3.215 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7395be1a0 method=java.util.stream.AbstractPipeline.wrapAndCopyInto(Ljava/util/stream/Sink;Ljava/util/Spliterator;)Ljava/util/stream/Sink; @ 6
+Event: 3.400 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73960f9dc method=java.util.stream.ReferencePipeline$3$1.accept(Ljava/lang/Object;)V @ 12
+Event: 3.401 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73960f9dc method=java.util.stream.ReferencePipeline$3$1.accept(Ljava/lang/Object;)V @ 12
+Event: 3.401 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73960f9dc method=java.util.stream.ReferencePipeline$3$1.accept(Ljava/lang/Object;)V @ 12
+Event: 3.401 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73960f9dc method=java.util.stream.ReferencePipeline$3$1.accept(Ljava/lang/Object;)V @ 12
+Event: 3.402 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394e6204 method=java.util.AbstractMap.equals(Ljava/lang/Object;)Z @ 8
+Event: 3.402 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394e6204 method=java.util.AbstractMap.equals(Ljava/lang/Object;)Z @ 8
+Event: 3.402 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394e6204 method=java.util.AbstractMap.equals(Ljava/lang/Object;)Z @ 8
+Event: 3.402 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394e6204 method=java.util.AbstractMap.equals(Ljava/lang/Object;)Z @ 8
+Event: 4.137 Thread 0x00007fe748b81000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73961e3cc method=net.minecraft.server.v1_14_R1.MinecraftKey.b(I)Z @ 45
+Event: 4.352 Thread 0x00007fe74804c800 Uncommon trap: reason=predicate action=maybe_recompile pc=0x00007fe739546b74 method=java.util.Arrays.fill([Ljava/lang/Object;Ljava/lang/Object;)V @ 10
+Event: 4.360 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73957bacc method=net.minecraft.server.v1_14_R1.VoxelShapeMergerList.a(Lnet/minecraft/server/v1_14_R1/VoxelShapeMerger$a;)Z @ 38
+Event: 4.360 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73957bacc method=net.minecraft.server.v1_14_R1.VoxelShapeMergerList.a(Lnet/minecraft/server/v1_14_R1/VoxelShapeMerger$a;)Z @ 38
+Event: 4.360 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73957bacc method=net.minecraft.server.v1_14_R1.VoxelShapeMergerList.a(Lnet/minecraft/server/v1_14_R1/VoxelShapeMerger$a;)Z @ 38
+Event: 4.393 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739598ce0 method=net.minecraft.server.v1_14_R1.VoxelShapeCubeMerger.a(Lnet/minecraft/server/v1_14_R1/VoxelShapeMerger$a;)Z @ 51
+Event: 4.430 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe739738030 method=java.util.stream.ReferencePipeline$3$1.accept(Ljava/lang/Object;)V @ 17
+Event: 4.430 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe739738030 method=java.util.stream.ReferencePipeline$3$1.accept(Ljava/lang/Object;)V @ 17
+Event: 4.461 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73947c674 method=java.util.concurrent.ConcurrentHashMap.putVal(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object; @ 192
+Event: 4.463 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73947c674 method=java.util.concurrent.ConcurrentHashMap.putVal(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object; @ 192
+Event: 4.508 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73947c674 method=java.util.concurrent.ConcurrentHashMap.putVal(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object; @ 192
+Event: 4.511 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73947c674 method=java.util.concurrent.ConcurrentHashMap.putVal(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object; @ 192
+Event: 4.519 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe739738030 method=java.util.stream.ReferencePipeline$3$1.accept(Ljava/lang/Object;)V @ 17
+Event: 4.656 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7395991a0 method=net.minecraft.server.v1_14_R1.VoxelShapeMergerIdentical.a(Lnet/minecraft/server/v1_14_R1/VoxelShapeMerger$a;)Z @ 24
+Event: 4.656 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7395991a0 method=net.minecraft.server.v1_14_R1.VoxelShapeMergerIdentical.a(Lnet/minecraft/server/v1_14_R1/VoxelShapeMerger$a;)Z @ 24
+Event: 5.001 Thread 0x00007fe748b81000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739555664 method=com.mojang.datafixers.types.templates.Sum.equals(Ljava/lang/Object;)Z @ 46
+Event: 5.034 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe739266e20 method=it.unimi.dsi.fastutil.doubles.AbstractDoubleList.listIterator()Lit/unimi/dsi/fastutil/doubles/DoubleListIterator; @ 2
+Event: 5.034 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe739266e20 method=it.unimi.dsi.fastutil.doubles.AbstractDoubleList.listIterator()Lit/unimi/dsi/fastutil/doubles/DoubleListIterator; @ 2
+Event: 5.034 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe739266e20 method=it.unimi.dsi.fastutil.doubles.AbstractDoubleList.listIterator()Lit/unimi/dsi/fastutil/doubles/DoubleListIterator; @ 2
+Event: 5.034 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe739266e20 method=it.unimi.dsi.fastutil.doubles.AbstractDoubleList.listIterator()Lit/unimi/dsi/fastutil/doubles/DoubleListIterator; @ 2
+Event: 5.071 Thread 0x00007fe748b81000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739840210 method=java.util.concurrent.ConcurrentHashMap.putVal(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object; @ 206
+Event: 5.152 Thread 0x00007fe748b81000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7392c37e4 method=java.util.concurrent.ConcurrentHashMap.addCount(JI)V @ 34
+Event: 5.223 Thread 0x00007fe748b81000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe739425520 method=com.mojang.datafixers.types.templates.Const.equals(Ljava/lang/Object;)Z @ 1
+Event: 5.227 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73949601c method=com.mojang.datafixers.types.templates.Tag.equals(Ljava/lang/Object;)Z @ 32
+Event: 5.228 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739489a24 method=com.mojang.datafixers.types.templates.Product.equals(Ljava/lang/Object;)Z @ 32
+Event: 5.260 Thread 0x00007fe748b81000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe739425520 method=com.mojang.datafixers.types.templates.Const.equals(Ljava/lang/Object;)Z @ 1
+Event: 5.269 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73922b7e4 method=com.mojang.datafixers.types.templates.List.equals(Ljava/lang/Object;)Z @ 21
+Event: 5.390 Thread 0x00007fe748b81000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe7392787c4 method=java.util.Optional.map(Ljava/util/function/Function;)Ljava/util/Optional; @ 21
+Event: 5.391 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe7392787c4 method=java.util.Optional.map(Ljava/util/function/Function;)Ljava/util/Optional; @ 21
+Event: 5.391 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe7392787c4 method=java.util.Optional.map(Ljava/util/function/Function;)Ljava/util/Optional; @ 21
+Event: 5.391 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe7392787c4 method=java.util.Optional.map(Ljava/util/function/Function;)Ljava/util/Optional; @ 21
+Event: 5.441 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7394cf144 method=java.util.concurrent.ConcurrentHashMap.transfer([Ljava/util/concurrent/ConcurrentHashMap$Node;[Ljava/util/concurrent/ConcurrentHashMap$Node;)V @ 277
+Event: 5.441 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7392c20d8 method=java.util.concurrent.ConcurrentHashMap.get(Ljava/lang/Object;)Ljava/lang/Object; @ 86
+Event: 6.219 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe7391f95c8 method=java.util.stream.ReduceOps$3ReducingSink.accept(Ljava/lang/Object;)V @ 9
+Event: 6.229 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe7391f95c8 method=java.util.stream.ReduceOps$3ReducingSink.accept(Ljava/lang/Object;)V @ 9
+Event: 6.230 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe7391f95c8 method=java.util.stream.ReduceOps$3ReducingSink.accept(Ljava/lang/Object;)V @ 9
+Event: 6.230 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe7391f95c8 method=java.util.stream.ReduceOps$3ReducingSink.accept(Ljava/lang/Object;)V @ 9
+Event: 6.264 Thread 0x00007fe748b81000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73961f778 method=java.util.concurrent.ConcurrentHashMap.addCount(JI)V @ 68
+Event: 6.365 Thread 0x00007fe748b7e800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007fe739425540 method=com.mojang.datafixers.types.templates.Const.equals(Ljava/lang/Object;)Z @ 1
+Event: 6.459 Thread 0x00007fe748b81000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73987fe04 method=java.util.concurrent.ConcurrentHashMap.addCount(JI)V @ 168
+Event: 6.465 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73987fe04 method=java.util.concurrent.ConcurrentHashMap.addCount(JI)V @ 168
+Event: 6.576 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73945a5cc method=com.mojang.datafixers.functions.PointFreeRule$CompRewrite.rewrite(Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/functions/PointFree;)Ljava/util/Optional; @ 75
+Event: 6.576 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7398805a8 method=com.mojang.datafixers.functions.PointFreeRule$CompAssocLeft.rewrite(Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/functions/PointFree;)Ljava/util/Optional; @ 23
+Event: 6.587 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739886b68 method=com.mojang.datafixers.functions.PointFreeRule$CompAssocRight.rewrite(Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/functions/PointFree;)Ljava/util/Optional; @ 23
+Event: 6.600 Thread 0x00007fe748b7e800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe739485480 method=com.mojang.datafixers.types.templates.Sum.equals(Ljava/lang/Object;)Z @ 8
+Event: 6.600 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739674b48 method=com.mojang.datafixers.types.templates.Tag.equals(Ljava/lang/Object;)Z @ 46
+Event: 6.601 Thread 0x00007fe748b7e800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe739485480 method=com.mojang.datafixers.types.templates.Sum.equals(Ljava/lang/Object;)Z @ 8
+Event: 6.601 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe739881aa4 method=com.mojang.datafixers.types.templates.Sum$SumType.equals(Ljava/lang/Object;ZZ)Z @ 43
+Event: 6.601 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe739881aa4 method=com.mojang.datafixers.types.templates.Sum$SumType.equals(Ljava/lang/Object;ZZ)Z @ 43
+Event: 6.611 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe739881aa4 method=com.mojang.datafixers.types.templates.Sum$SumType.equals(Ljava/lang/Object;ZZ)Z @ 43
+Event: 6.611 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe739881aa4 method=com.mojang.datafixers.types.templates.Sum$SumType.equals(Ljava/lang/Object;ZZ)Z @ 43
+Event: 6.666 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739613290 method=com.mojang.datafixers.types.templates.Product.equals(Ljava/lang/Object;)Z @ 2
+Event: 6.672 Thread 0x00007fe748b7e800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe739485480 method=com.mojang.datafixers.types.templates.Sum.equals(Ljava/lang/Object;)Z @ 8
+Event: 6.672 Thread 0x00007fe748b7e800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe739485480 method=com.mojang.datafixers.types.templates.Sum.equals(Ljava/lang/Object;)Z @ 8
+Event: 6.734 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7395bc78c method=java.util.HashMap$EntrySpliterator.forEachRemaining(Ljava/util/function/Consumer;)V @ 142
+Event: 6.738 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73954c458 method=java.util.AbstractCollection.toArray()[Ljava/lang/Object; @ 1
+Event: 6.739 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7395bc78c method=java.util.HashMap$EntrySpliterator.forEachRemaining(Ljava/util/function/Consumer;)V @ 142
+Event: 6.739 Thread 0x00007fe74804c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73954c458 method=java.util.AbstractCollection.toArray()[Ljava/lang/Object; @ 1
+Event: 6.739 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7395bc78c method=java.util.HashMap$EntrySpliterator.forEachRemaining(Ljava/util/function/Consumer;)V @ 142
+Event: 6.739 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7395bc78c method=java.util.HashMap$EntrySpliterator.forEachRemaining(Ljava/util/function/Consumer;)V @ 142
+Event: 6.753 Thread 0x00007fe74804c800 Uncommon trap: reason=predicate action=maybe_recompile pc=0x00007fe7395be27c method=java.util.stream.ReferencePipeline.forEachWithCancel(Ljava/util/Spliterator;Ljava/util/stream/Sink;)V @ 9
+Event: 6.947 Thread 0x00007fe748b81000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739896ff0 method=com.mojang.datafixers.TypeRewriteRule$OrElse.equals(Ljava/lang/Object;)Z @ 11
+Event: 6.947 Thread 0x00007fe748b81000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739896a70 method=com.mojang.datafixers.TypeRewriteRule$All.equals(Ljava/lang/Object;)Z @ 11
+Event: 7.070 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe73967b998 method=java.util.stream.Collectors$$Lambda$133/682910755.accept(Ljava/lang/Object;Ljava/lang/Object;)V @ 13
+Event: 7.070 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394772fc method=java.util.HashMap.merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object; @ 289
+Event: 7.070 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe73967b998 method=java.util.stream.Collectors$$Lambda$133/682910755.accept(Ljava/lang/Object;Ljava/lang/Object;)V @ 13
+Event: 7.070 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394772fc method=java.util.HashMap.merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object; @ 289
+Event: 7.070 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe73967b998 method=java.util.stream.Collectors$$Lambda$133/682910755.accept(Ljava/lang/Object;Ljava/lang/Object;)V @ 13
+Event: 7.070 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394772fc method=java.util.HashMap.merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object; @ 289
+Event: 7.071 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe73967b998 method=java.util.stream.Collectors$$Lambda$133/682910755.accept(Ljava/lang/Object;Ljava/lang/Object;)V @ 13
+Event: 7.071 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7394772fc method=java.util.HashMap.merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object; @ 289
+Event: 7.071 Thread 0x00007fe74804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe73948df58 method=java.util.stream.Collectors$$Lambda$133/682910755.accept(Ljava/lang/Object;Ljava/lang/Object;)V @ 13
+Event: 7.139 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73911d408 method=com.google.common.collect.ImmutableList.asImmutableList([Ljava/lang/Object;I)Lcom/google/common/collect/ImmutableList; @ 48
+Event: 7.148 Thread 0x00007fe748b81000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7398cb99c method=com.mojang.datafixers.functions.PointFreeRule$SortInj.doRewrite(Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/functions/Poin
+Event: 7.148 Thread 0x00007fe748b81000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7398d03d8 method=com.mojang.datafixers.functions.PointFreeRule$SortProj.doRewrite(Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/functions/Poi
+Event: 7.148 Thread 0x00007fe748b81000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7398cb9b8 method=com.mojang.datafixers.functions.PointFreeRule$SortInj.doRewrite(Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/functions/Poin
+Event: 7.148 Thread 0x00007fe748b81000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7398d03f4 method=com.mojang.datafixers.functions.PointFreeRule$SortProj.doRewrite(Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/functions/Poi
+Event: 7.148 Thread 0x00007fe748b81000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7398cb99c method=com.mojang.datafixers.functions.PointFreeRule$SortInj.doRewrite(Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/functions/Poin
+Event: 7.148 Thread 0x00007fe748b81000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7398d03d8 method=com.mojang.datafixers.functions.PointFreeRule$SortProj.doRewrite(Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/functions/Poi
+Event: 7.148 Thread 0x00007fe748b81000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7398cb9b8 method=com.mojang.datafixers.functions.PointFreeRule$SortInj.doRewrite(Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/functions/Poin
+Event: 7.148 Thread 0x00007fe748b81000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7398d03f4 method=com.mojang.datafixers.functions.PointFreeRule$SortProj.doRewrite(Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/functions/Poi
+Event: 7.190 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7398bc01c method=com.mojang.datafixers.functions.PointFreeRule$CataFuseSame.doRewrite(Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/functions/Poi
+Event: 7.190 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7398bbd14 method=com.mojang.datafixers.functions.PointFreeRule$CataFuseDifferent.doRewrite(Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/function
+Event: 7.422 Thread 0x00007fe748b7e800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe73947df18 method=com.mojang.datafixers.types.templates.Named.equals(Ljava/lang/Object;)Z @ 8
+Event: 7.422 Thread 0x00007fe748b7e800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe73947df18 method=com.mojang.datafixers.types.templates.Named.equals(Ljava/lang/Object;)Z @ 8
+Event: 7.478 Thread 0x00007fe748b7e800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe73947df18 method=com.mojang.datafixers.types.templates.Named.equals(Ljava/lang/Object;)Z @ 8
+Event: 7.478 Thread 0x00007fe748b7e800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe73947df18 method=com.mojang.datafixers.types.templates.Named.equals(Ljava/lang/Object;)Z @ 8
+Event: 7.560 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73978c908 method=com.mojang.brigadier.StringReader.readUnquotedString()Ljava/lang/String; @ 9
+Event: 7.561 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739773aec method=com.mojang.brigadier.StringReader.readUnquotedString()Ljava/lang/String; @ 9
+Event: 7.562 Thread 0x00007fe74804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73977d404 method=com.mojang.brigadier.StringReader.isAllowedInUnquotedString(C)Z @ 3
+Event: 7.720 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7398aa4f0 method=com.mojang.datafixers.types.templates.Tag$TagType.equals(Ljava/lang/Object;ZZ)Z @ 59
+Event: 7.720 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7398a41d0 method=com.mojang.datafixers.types.templates.Product$ProductType.equals(Ljava/lang/Object;ZZ)Z @ 29
+Event: 7.805 Thread 0x00007fe7489fb800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7398935f0 method=java.util.concurrent.ConcurrentHashMap.replaceNode(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; @ 1
+Event: 7.808 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe7398a7ae0 method=org.bukkit.craftbukkit.libs.org.apache.commons.lang3.tuple.Triple.hashCode()I @ 33
+Event: 7.810 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe7398a7ae0 method=org.bukkit.craftbukkit.libs.org.apache.commons.lang3.tuple.Triple.hashCode()I @ 33
+Event: 7.820 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe7398a7ae0 method=org.bukkit.craftbukkit.libs.org.apache.commons.lang3.tuple.Triple.hashCode()I @ 33
+Event: 7.828 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe7398a7ae0 method=org.bukkit.craftbukkit.libs.org.apache.commons.lang3.tuple.Triple.hashCode()I @ 33
+Event: 7.829 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe739880a68 method=org.bukkit.craftbukkit.libs.org.apache.commons.lang3.tuple.Triple.hashCode()I @ 33
+Event: 7.880 Thread 0x00007fe6ec005000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7398935f0 method=java.util.concurrent.ConcurrentHashMap.replaceNode(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; @ 1
+Event: 8.018 Thread 0x00007fe7489fb800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7395648c8 method=java.util.regex.Matcher.match(II)Z @ 91
+Event: 8.041 Thread 0x00007fe7489fb800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73931a854 method=java.util.HashMap.hash(Ljava/lang/Object;)I @ 1
+Event: 8.117 Thread 0x00007fe7489fb800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7394d4398 method=java.util.HashMap.hash(Ljava/lang/Object;)I @ 1
+Event: 8.305 Thread 0x00007fe7489fb800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7392f9fac method=java.util.zip.InflaterInputStream.read([BII)I @ 100
+Event: 8.306 Thread 0x00007fe7489fb800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7392f9fac method=java.util.zip.InflaterInputStream.read([BII)I @ 100
+Event: 8.307 Thread 0x00007fe7489fb800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7392f9fac method=java.util.zip.InflaterInputStream.read([BII)I @ 100
+Event: 8.308 Thread 0x00007fe7489fb800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7392f9fac method=java.util.zip.InflaterInputStream.read([BII)I @ 100
+Event: 8.529 Thread 0x00007fe74848d000 Uncommon trap: reason=predicate action=maybe_recompile pc=0x00007fe739381888 method=sun.net.www.ParseUtil.encodePath(Ljava/lang/String;Z)Ljava/lang/String; @ 36
+Event: 8.540 Thread 0x00007fe74848d000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739686624 method=java.lang.CharacterDataLatin1.isWhitespace(I)Z @ 14
+Event: 8.540 Thread 0x00007fe74848d000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe73923c2e0 method=java.lang.CharacterDataLatin1.isWhitespace(I)Z @ 14
+Event: 9.971 Thread 0x00007fe748b7e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe7398f410c method=com.mojang.datafixers.functions.PointFreeRule$SortInj.doRewrite(Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/types/Type;Lcom/mojang/datafixers/functions/PointFre
+Event: 10.242 Thread 0x00007fe7489fb800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7398935f0 method=java.util.concurrent.ConcurrentHashMap.replaceNode(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; @ 1
+Event: 10.242 Thread 0x00007fe7489fb800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7398935f0 method=java.util.concurrent.ConcurrentHashMap.replaceNode(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; @ 1
+Event: 10.251 Thread 0x00007fe7489fb800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe73964009c method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 152
+Event: 10.552 Thread 0x00007fe6ec1b1000 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007fe739515348 method=java.lang.Boolean.equals(Ljava/lang/Object;)Z @ 1
+Event: 10.882 Thread 0x00007fe748b81000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fe739229210 method=com.mojang.datafixers.types.templates.Named$NamedType.equals(Ljava/lang/Object;ZZ)Z @ 51
+Event: 10.947 Thread 0x00007fe748b7e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe739a96c4c method=java.util.Map.computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object; @ 34
+Event: 12.120 Thread 0x00007fe748b81000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007fe739a96c4c method=java.util.Map.computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object; @ 34
+Event: 12.230 Thread 0x00007fe748b81000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7397b931c method=com.mojang.datafixers.functions.Apply$$Lambda$823/997286715.apply(Ljava/lang/Object;)Ljava/lang/Object; @ 5
+Event: 12.230 Thread 0x00007fe748b81000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7397b931c method=com.mojang.datafixers.functions.Apply$$Lambda$823/997286715.apply(Ljava/lang/Object;)Ljava/lang/Object; @ 5
+Event: 12.240 Thread 0x00007fe748b81000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7397b931c method=com.mojang.datafixers.functions.Apply$$Lambda$823/997286715.apply(Ljava/lang/Object;)Ljava/lang/Object; @ 5
+Event: 12.248 Thread 0x00007fe748b81000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fe7397b931c method=com.mojang.datafixers.functions.Apply$$Lambda$823/997286715.apply(Ljava/lang/Object;)Ljava/lang/Object; @ 5
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (79 events):
+Event: 0.019 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x000000076ec07cb8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x8
+Event: 0.019 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x000000076ec07fa0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotsp
+Event: 0.088 Thread 0x00007fe74804c800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076eccaa98) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
+Event: 0.088 Thread 0x00007fe74804c800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076eccaca8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
+Event: 0.090 Thread 0x00007fe74804c800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076eccd6c8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
+Event: 0.090 Thread 0x00007fe74804c800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076eccd8d8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
+Event: 0.091 Thread 0x00007fe74804c800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076ecce628) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
+Event: 0.091 Thread 0x00007fe74804c800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076ecce838) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
+Event: 0.095 Thread 0x00007fe74804c800 Exception <a 'sun/nio/fs/UnixException'> (0x000000076ecdbd50) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 1.116 Thread 0x00007fe74804c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 18> (0x000000077c548398) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 371]
+Event: 1.117 Thread 0x00007fe74804c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 110> (0x000000077c5498f0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 371]
+Event: 1.118 Thread 0x00007fe74804c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 40> (0x000000077c54ab90) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 371]
+Event: 1.118 Thread 0x00007fe74804c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 110> (0x000000077c54c608) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 371]
+Event: 1.213 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000077c7c1100) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/methodHandles.cpp, line 1167]
+Event: 1.215 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000077c7ce7c0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/methodHandles.cpp, line 1167]
+Event: 1.453 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$identity$2(Ljava/lang/Object;)Ljava/lang/Object;> (0x000000077dd56fd0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/in
+Event: 1.464 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$comparingInt$7b0bb60$1(Ljava/util/function/ToIntFunction;Ljava/lang/Object;Ljava/lang/Object;)I> (0x000000077dd81328) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.a
+Event: 1.518 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': org.slf4j.impl.StaticMarkerBinder.getSingleton()Lorg/slf4j/impl/StaticMarkerBinder;> (0x000000077ded95d0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/
+Event: 1.674 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$chars$0()Ljava/util/Spliterator$OfInt;> (0x000000077e9330f8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/
+Event: 2.104 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.p(ZZ)Z> (0x000000076ec185b0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.104 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.o(ZZ)Z> (0x000000076ec1a8e0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.107 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.n(ZZ)Z> (0x000000076ec1c910) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.108 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.m(ZZ)Z> (0x000000076ec1e940) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.108 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.l(ZZ)Z> (0x000000076ec20970) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.108 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.k(ZZ)Z> (0x000000076ec229a0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.108 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.j(ZZ)Z> (0x000000076ec249d0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.109 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.i(ZZ)Z> (0x000000076ec26a00) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.109 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.h(ZZ)Z> (0x000000076ec28a30) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.109 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.g(ZZ)Z> (0x000000076ec2aa60) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.110 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.f(ZZ)Z> (0x000000076ec2ca90) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.110 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.e(ZZ)Z> (0x000000076ec2eac0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.110 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.d(ZZ)Z> (0x000000076ec30af0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.112 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.c(ZZ)Z> (0x000000076ec32b20) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.112 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.b(ZZ)Z> (0x000000076ec34b50) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 2.112 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.a(ZZ)Z> (0x000000076ec36b80) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 620]
+Event: 3.043 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$comparing$77a9974f$1(Ljava/util/function/Function;Ljava/lang/Object;Ljava/lang/Object;)I> (0x0000000778585538) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.
+Event: 3.093 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$or$2(Ljava/util/function/Predicate;Ljava/lang/Object;)Z> (0x00000007787070f0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/shar
+Event: 3.167 Thread 0x00007fe74804c800 Implicit null exception at 0x00007fe7392d3158 to 0x00007fe7392d31e6
+Event: 3.168 Thread 0x00007fe74804c800 Implicit null exception at 0x00007fe73921a72f to 0x00007fe73921a799
+Event: 3.197 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.remainder()Lcom/mojang/datafixers/types/templates/TypeTemplate;> (0x0000000778b849f0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/sha
+Event: 3.214 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$taggedChoiceLazy$0(Ljava/util/Map$Entry;)Lcom/mojang/datafixers/util/Pair;> (0x0000000778c8d1d8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openj
+Event: 3.231 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.or(Lcom/mojang/datafixers/types/templates/TypeTemplate;Lcom/mojang/datafixers/types/templates/TypeTemplate;)Lcom/mojang/datafixers/types/templates/TypeTemplate;> (0x0000000778d3ddb8) thrown at [
+Event: 3.245 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$orElse$2(Lcom/mojang/datafixers/functions/PointFreeRule;)Lcom/mojang/datafixers/functions/PointFreeRule;> (0x0000000778e25ef0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.22
+Event: 3.246 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$once$3(Lcom/mojang/datafixers/functions/PointFreeRule;)Lcom/mojang/datafixers/functions/PointFreeRule;> (0x0000000778e44860) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.
+Event: 3.400 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$getGeneric$10(Ljava/lang/Object;Ljava/util/Map;)Ljava/util/Optional;> (0x00000007794d2ee0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hot
+Event: 3.754 Thread 0x00007fe748b7e800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$taggedChoiceType$1(Lorg/bukkit/craftbukkit/libs/org/apache/commons/lang3/tuple/Triple;)Lcom/mojang/datafixers/types/Type;> (0x000000077c035e90) thrown at [/builddir/build/BUILD/java-1.8.0
+Event: 4.259 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$and$0(Ljava/util/function/Predicate;Ljava/lang/Object;)Z> (0x000000077cfaf2d0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/sha
+Event: 4.364 Thread 0x00007fe748b7e800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.nop()Lcom/mojang/datafixers/TypeRewriteRule;> (0x000000077c0596d0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/l
+Event: 4.479 Thread 0x00007fe748b81000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$rewrite$1(Lcom/mojang/datafixers/functions/Comp;Lcom/mojang/datafixers/functions/PointFree;)Lcom/mojang/datafixers/functions/PointFree;> (0x000000077d722138) thrown at [/builddir/build/BU
+Event: 4.479 Thread 0x00007fe748b81000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$rewrite$0(Lcom/mojang/datafixers/functions/Comp;Lcom/mojang/datafixers/functions/PointFree;)Lcom/mojang/datafixers/functions/PointFree;> (0x000000077d726460) thrown at [/builddir/build/BU
+Event: 4.500 Thread 0x00007fe748b7e800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$eval$0(Lcom/mojang/datafixers/optics/profunctors/Profunctor;Lcom/mojang/datafixers/kinds/App2;)Lcom/mojang/datafixers/kinds/App2;> (0x000000077c1c3050) thrown at [/builddir/build/BUILD/ja
+Event: 4.502 Thread 0x00007fe748b7e800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$eval$1(Lcom/mojang/datafixers/optics/profunctors/Cocartesian;Lcom/mojang/datafixers/kinds/App2;)Lcom/mojang/datafixers/kinds/App2;> (0x000000077c1dcd38) thrown at [/builddir/build/BUILD/j
+Event: 4.503 Thread 0x00007fe748b7e800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$compose$0(Ljava/util/function/Function;Ljava/lang/Object;)Ljava/lang/Object;> (0x000000077c1e7290) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/ope
+Event: 4.518 Thread 0x00007fe748b81000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$eval$0(Lcom/mojang/datafixers/optics/profunctors/TraversalP;Lcom/mojang/datafixers/kinds/App2;)Lcom/mojang/datafixers/kinds/App2;> (0x000000077e166e58) thrown at [/builddir/build/BUILD/ja
+Event: 4.519 Thread 0x00007fe748b81000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$eval$2(Lcom/mojang/datafixers/optics/profunctors/Cartesian;Lcom/mojang/datafixers/kinds/App2;)Lcom/mojang/datafixers/kinds/App2;> (0x000000077e1806b8) thrown at [/builddir/build/BUILD/jav
+Event: 6.264 Thread 0x00007fe748b81000 Implicit null exception at 0x00007fe73961f4a2 to 0x00007fe73961f759
+Event: 6.365 Thread 0x00007fe748b7e800 Implicit null exception at 0x00007fe73942548c to 0x00007fe739425532
+Event: 6.414 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.a(Ljava/text/DecimalFormat;)V> (0x000000076fa349f0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp
+Event: 6.415 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.c(I)Ljava/lang/String;> (0x000000076fa3e4b0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 
+Event: 6.416 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.b(I)Ljava/lang/String;> (0x000000076fa40608) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 
+Event: 6.416 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.a(I)Ljava/lang/String;> (0x000000076fa425e8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 
+Event: 6.585 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.a(Lcom/mojang/datafixers/Dynamic;)Lnet/minecraft/server/v1_14_R1/DefinedStructureRuleTest;> (0x0000000775a985e8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86
+Event: 6.589 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.b(Lcom/mojang/datafixers/Dynamic;)Lnet/minecraft/server/v1_14_R1/DefinedStructureProcessor;> (0x0000000775ad4188) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x8
+Event: 6.590 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.a(Lcom/mojang/datafixers/Dynamic;)Lnet/minecraft/server/v1_14_R1/DefinedStructureProcessor;> (0x0000000775ae01e8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x8
+Event: 6.593 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.a(Lcom/mojang/datafixers/Dynamic;)Lnet/minecraft/server/v1_14_R1/WorldGenFeatureDefinedStructurePoolStructure;> (0x0000000775b14ca0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222
+Event: 6.701 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.a(Ljava/util/HashMap;)V> (0x0000000775d14ce0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/interpreter/linkResolver.cpp, line
+Event: 6.780 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$static$0(Lnet/minecraft/server/v1_14_R1/ISourceBlock;Lnet/minecraft/server/v1_14_R1/ItemStack;)Lnet/minecraft/server/v1_14_R1/ItemStack;> (0x0000000775ebdb80) thrown at [/builddir/build/B
+Event: 7.067 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$comparingByValue$1065357e$1(Ljava/util/Map$Entry;Ljava/util/Map$Entry;)I> (0x000000077b11f9a8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk
+Event: 7.190 Thread 0x00007fe748b7e800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$rewrite$0(Lcom/mojang/datafixers/View;Lcom/mojang/datafixers/functions/PointFree;)Lcom/mojang/datafixers/View;> (0x0000000781f08e10) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.
+Event: 7.506 Thread 0x00007fe74804c800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$getString$0(Ljava/lang/StringBuilder;Lnet/minecraft/server/v1_14_R1/IChatBaseComponent;)V> (0x0000000784c2af68) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0
+Event: 8.041 Thread 0x00007fe7489fb800 Implicit null exception at 0x00007fe73931a635 to 0x00007fe73931a845
+Event: 8.117 Thread 0x00007fe7489fb800 Implicit null exception at 0x00007fe7394d4175 to 0x00007fe7394d4389
+Event: 8.170 Thread 0x00007fe7489fb800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$comparingLong$6043328a$1(Ljava/util/function/ToLongFunction;Ljava/lang/Object;Ljava/lang/Object;)I> (0x000000078b8067a0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-
+Event: 8.209 Thread 0x00007fe7489fb800 Exception <a 'java/io/FileNotFoundException'> (0x000000078b8331f8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 8.209 Thread 0x00007fe7489fb800 Exception <a 'java/io/FileNotFoundException'> (0x000000078b833d48) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 10.246 Thread 0x00007fe7489fb800 Exception <a 'java/lang/UnsatisfiedLinkError': io.netty.channel.epoll.Native.offsetofEpollData()I> (0x0000000781b11c18) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/nativeLookup.cp
+Event: 10.249 Thread 0x00007fe7489fb800 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x0000000781b24eb0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/runtime/reflection.cpp, line 1092]
+Event: 10.552 Thread 0x00007fe6ec1b1000 Implicit null exception at 0x00007fe73951530c to 0x00007fe73951533b
+Event: 10.553 Thread 0x00007fe7489fb800 Exception <a 'io/netty/channel/unix/Errors$NativeIoException'> (0x0000000785dda318) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 710]
+
+Events (250 events):
+Event: 11.155 Executing VM operation: RevokeBias done
+Event: 11.157 Executing VM operation: RevokeBias
+Event: 11.159 Executing VM operation: RevokeBias done
+Event: 11.161 Executing VM operation: RevokeBias
+Event: 11.161 Executing VM operation: RevokeBias done
+Event: 11.180 Executing VM operation: RevokeBias
+Event: 11.185 Executing VM operation: RevokeBias done
+Event: 11.215 Executing VM operation: RevokeBias
+Event: 11.222 Executing VM operation: RevokeBias done
+Event: 11.230 Executing VM operation: RevokeBias
+Event: 11.235 Executing VM operation: RevokeBias done
+Event: 11.243 Executing VM operation: RevokeBias
+Event: 11.245 Executing VM operation: RevokeBias done
+Event: 11.246 Executing VM operation: RevokeBias
+Event: 11.246 Executing VM operation: RevokeBias done
+Event: 11.304 Executing VM operation: RevokeBias
+Event: 11.311 Executing VM operation: RevokeBias done
+Event: 11.313 Executing VM operation: RevokeBias
+Event: 11.315 Executing VM operation: RevokeBias done
+Event: 11.316 Executing VM operation: BulkRevokeBias
+Event: 11.317 Executing VM operation: BulkRevokeBias done
+Event: 11.407 Executing VM operation: ParallelGCFailedAllocation
+Event: 11.592 Executing VM operation: ParallelGCFailedAllocation done
+Event: 11.599 Executing VM operation: RevokeBias
+Event: 11.603 Executing VM operation: RevokeBias done
+Event: 11.603 Executing VM operation: RevokeBias
+Event: 11.603 Executing VM operation: RevokeBias done
+Event: 11.603 Executing VM operation: RevokeBias
+Event: 11.603 Executing VM operation: RevokeBias done
+Event: 11.603 Executing VM operation: RevokeBias
+Event: 11.603 Executing VM operation: RevokeBias done
+Event: 11.910 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73911d110
+Event: 11.910 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73912cd90
+Event: 11.910 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7391359d0
+Event: 11.910 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739135d90
+Event: 11.910 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7391685d0
+Event: 11.910 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73916eb10
+Event: 11.910 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739172690
+Event: 11.910 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739185c90
+Event: 11.920 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7391948d0
+Event: 11.920 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739195110
+Event: 11.920 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73919b9d0
+Event: 11.920 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7391a0d90
+Event: 11.920 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7391e2ad0
+Event: 11.920 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7391f2f50
+Event: 11.920 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7391f48d0
+Event: 11.921 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73922d790
+Event: 11.921 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739230a10
+Event: 11.921 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739233510
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73923c110
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739241ed0
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739247d50
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739248710
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739273590
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739276150
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739276ad0
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739277350
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739281790
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739290b50
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739290f10
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7392912d0
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73929eed0
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73929f310
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7392a1bd0
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7392a4150
+Event: 11.933 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7392aad10
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7392c7250
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7392c7b90
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7392f92d0
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73931a490
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739333e10
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7393381d0
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7393611d0
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739362a90
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739380e50
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739389d90
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73939b490
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7393b53d0
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7393b5790
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7393b5f50
+Event: 11.935 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7393b6bd0
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7393da210
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7393da650
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73942f050
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7394379d0
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73945a350
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739468dd0
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739469210
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7394695d0
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73946b810
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739470590
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739472810
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739472e10
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739476dd0
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73947dbd0
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7394851d0
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739485750
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73948dd10
+Event: 11.936 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73949a5d0
+Event: 11.948 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe7394ba410
+Event: 11.948 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe7394d3fd0
+Event: 11.948 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe7394d79d0
+Event: 11.948 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe7394d8110
+Event: 11.948 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe7394e5290
+Event: 11.948 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe7394ea190
+Event: 11.948 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe7394f4310
+Event: 11.948 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe7394f5710
+Event: 11.948 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe739505790
+Event: 11.948 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe739508750
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe73950f510
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe739511690
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe739511f90
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe739523dd0
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe739525850
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe73952af10
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe7395425d0
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe739548210
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe739549850
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe73954ad90
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe739564290
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe739566dd0
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe73957d890
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe73958af10
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe73958b850
+Event: 11.949 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe739594250
+Event: 12.004 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe7395a04d0
+Event: 12.004 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe7395b4b50
+Event: 12.004 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe7395bc410
+Event: 12.004 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe7395bcc90
+Event: 12.005 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe739613010
+Event: 12.005 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe739616f50
+Event: 12.005 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe739617650
+Event: 12.005 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe73961df90
+Event: 12.005 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe73961e890
+Event: 12.049 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73962f390
+Event: 12.049 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739674850
+Event: 12.049 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73967b710
+Event: 12.049 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739684190
+Event: 12.049 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7396853d0
+Event: 12.049 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739686450
+Event: 12.049 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739686c50
+Event: 12.049 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73969aa90
+Event: 12.064 Executing VM operation: RevokeBias
+Event: 12.065 Executing VM operation: RevokeBias done
+Event: 12.065 Executing VM operation: RevokeBias
+Event: 12.065 Executing VM operation: RevokeBias done
+Event: 12.065 Executing VM operation: RevokeBias
+Event: 12.066 Executing VM operation: RevokeBias done
+Event: 12.066 Executing VM operation: RevokeBias
+Event: 12.066 Executing VM operation: RevokeBias done
+Event: 12.066 Executing VM operation: RevokeBias
+Event: 12.067 Executing VM operation: RevokeBias done
+Event: 12.120 Thread 0x00007fe748b81000 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x00007fe739a96c4c
+Event: 12.120 Thread 0x00007fe748b81000 DEOPT PACKING pc=0x00007fe739a96c4c sp=0x00007fe71102e410
+Event: 12.120 Thread 0x00007fe748b81000 DEOPT UNPACKING pc=0x00007fe739047f7a sp=0x00007fe71102e3e8 mode 2
+Event: 12.122 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe73972db90
+Event: 12.137 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739746010
+Event: 12.137 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739755e10
+Event: 12.137 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7397734d0
+Event: 12.137 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73977d250
+Event: 12.137 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739783d50
+Event: 12.137 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73978c2d0
+Event: 12.137 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739796210
+Event: 12.137 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739797b10
+Event: 12.137 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7397bba90
+Event: 12.166 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7397e0f50
+Event: 12.166 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398018d0
+Event: 12.166 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73981b410
+Event: 12.166 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739841d90
+Event: 12.166 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739858e10
+Event: 12.166 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739863790
+Event: 12.166 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73986f750
+Event: 12.166 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73987f990
+Event: 12.166 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398803d0
+Event: 12.166 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739880710
+Event: 12.166 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739881650
+Event: 12.166 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739886990
+Event: 12.186 Executing VM operation: RevokeBias
+Event: 12.190 Executing VM operation: RevokeBias done
+Event: 12.191 Executing VM operation: RevokeBias
+Event: 12.191 Executing VM operation: RevokeBias done
+Event: 12.191 Executing VM operation: RevokeBias
+Event: 12.191 Executing VM operation: RevokeBias done
+Event: 12.191 Executing VM operation: RevokeBias
+Event: 12.191 Executing VM operation: RevokeBias done
+Event: 12.191 Executing VM operation: RevokeBias
+Event: 12.191 Executing VM operation: RevokeBias done
+Event: 12.191 Executing VM operation: RevokeBias
+Event: 12.191 Executing VM operation: RevokeBias done
+Event: 12.193 Executing VM operation: RevokeBias
+Event: 12.193 Executing VM operation: RevokeBias done
+Event: 12.206 Executing VM operation: RevokeBias
+Event: 12.206 Executing VM operation: RevokeBias done
+Event: 12.211 Executing VM operation: RevokeBias
+Event: 12.211 Executing VM operation: RevokeBias done
+Event: 12.211 Executing VM operation: RevokeBias
+Event: 12.216 Executing VM operation: RevokeBias done
+Event: 12.230 Thread 0x00007fe748b81000 Uncommon trap: trap_request=0xffffffde fr.pc=0x00007fe7397b931c
+Event: 12.230 Thread 0x00007fe748b81000 DEOPT PACKING pc=0x00007fe7397b931c sp=0x00007fe71102e000
+Event: 12.230 Thread 0x00007fe748b81000 DEOPT UNPACKING pc=0x00007fe739047f7a sp=0x00007fe71102dfb0 mode 2
+Event: 12.230 Thread 0x00007fe748b81000 Uncommon trap: trap_request=0xffffffde fr.pc=0x00007fe7397b931c
+Event: 12.230 Thread 0x00007fe748b81000 DEOPT PACKING pc=0x00007fe7397b931c sp=0x00007fe71102e000
+Event: 12.230 Thread 0x00007fe748b81000 DEOPT UNPACKING pc=0x00007fe739047f7a sp=0x00007fe71102dfb0 mode 2
+Event: 12.240 Thread 0x00007fe748b81000 Uncommon trap: trap_request=0xffffffde fr.pc=0x00007fe7397b931c
+Event: 12.240 Thread 0x00007fe748b81000 DEOPT PACKING pc=0x00007fe7397b931c sp=0x00007fe71102da60
+Event: 12.240 Thread 0x00007fe748b81000 DEOPT UNPACKING pc=0x00007fe739047f7a sp=0x00007fe71102da10 mode 2
+Event: 12.248 Thread 0x00007fe748b81000 Uncommon trap: trap_request=0xffffffde fr.pc=0x00007fe7397b931c
+Event: 12.248 Thread 0x00007fe748b81000 DEOPT PACKING pc=0x00007fe7397b931c sp=0x00007fe71102d6a0
+Event: 12.248 Thread 0x00007fe748b81000 DEOPT UNPACKING pc=0x00007fe739047f7a sp=0x00007fe71102d650 mode 2
+Event: 12.250 Executing VM operation: RevokeBias
+Event: 12.254 Executing VM operation: RevokeBias done
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739896890
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739896e10
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739897850
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739898390
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73989b090
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73989df10
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398a0cd0
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398a3ed0
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398a4c50
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398a6050
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398aa210
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398ace10
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398bbb50
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398bbe50
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398bf610
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398c5dd0
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398cb610
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398cfd50
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398d47d0
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398db9d0
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398f2890
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398f31d0
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe7398f6590
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739904f50
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739905b90
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe73990e2d0
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739914790
+Event: 12.256 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739914e90
+Event: 12.258 Thread 0x00007fe748193000 flushing nmethod 0x00007fe739931090
+Event: 12.258 Executing VM operation: RevokeBias
+Event: 12.258 Executing VM operation: RevokeBias done
+Event: 12.259 Executing VM operation: RevokeBias
+Event: 12.259 Executing VM operation: RevokeBias done
+Event: 12.291 Executing VM operation: RevokeBias
+Event: 12.295 Executing VM operation: RevokeBias done
+Event: 12.299 Executing VM operation: BulkRevokeBias
+Event: 12.300 Executing VM operation: BulkRevokeBias done
+Event: 12.307 Thread 0x00007fe7481a2800 flushing nmethod 0x00007fe73998eb50
+Event: 12.806 Executing VM operation: ParallelGCFailedAllocation
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 103:01 8426978                           /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/bin/java
+00600000-00601000 r--p 00000000 103:01 8426978                           /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/bin/java
+00601000-00602000 rw-p 00001000 103:01 8426978                           /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/bin/java
+02589000-025aa000 rw-p 00000000 00:00 0                                  [heap]
+6cc400000-6f6f00000 rw-p 00000000 00:00 0 
+6f6f00000-76ec00000 ---p 00000000 00:00 0 
+76ec00000-7b2f00000 rw-p 00000000 00:00 0 
+7c0000000-7c078a000 rw-p 00000000 00:00 0 
+7c078a000-800000000 ---p 00000000 00:00 0 
+7fe6e4000000-7fe6e410f000 rw-p 00000000 00:00 0 
+7fe6e410f000-7fe6e8000000 ---p 00000000 00:00 0 
+7fe6eb4ed000-7fe6eb4f0000 ---p 00000000 00:00 0 
+7fe6eb4f0000-7fe6eb5ee000 rw-p 00000000 00:00 0 
+7fe6eb5ee000-7fe6eb5f1000 ---p 00000000 00:00 0 
+7fe6eb5f1000-7fe6eb6ef000 rw-p 00000000 00:00 0 
+7fe6eb6ef000-7fe6eb6f2000 ---p 00000000 00:00 0 
+7fe6eb6f2000-7fe6eb8b0000 rw-p 00000000 00:00 0 
+7fe6eb8b0000-7fe6eb9f0000 ---p 00000000 00:00 0 
+7fe6eb9f0000-7fe6eb9fd000 r-xp 00000000 103:01 159412                    /tmp/libnetty_transport_native_epoll_x86_645422415647992294844.so (deleted)
+7fe6eb9fd000-7fe6ebbfc000 ---p 0000d000 103:01 159412                    /tmp/libnetty_transport_native_epoll_x86_645422415647992294844.so (deleted)
+7fe6ebbfc000-7fe6ebbfe000 rw-p 0000c000 103:01 159412                    /tmp/libnetty_transport_native_epoll_x86_645422415647992294844.so (deleted)
+7fe6ebbfe000-7fe6ebc01000 ---p 00000000 00:00 0 
+7fe6ebc01000-7fe6ebcff000 rw-p 00000000 00:00 0 
+7fe6ebcff000-7fe6ebd02000 ---p 00000000 00:00 0 
+7fe6ebd02000-7fe6ec000000 rw-p 00000000 00:00 0 
+7fe6ec000000-7fe6ec29c000 rw-p 00000000 00:00 0 
+7fe6ec29c000-7fe6f0000000 ---p 00000000 00:00 0 
+7fe6f0000000-7fe6f0043000 rw-p 00000000 00:00 0 
+7fe6f0043000-7fe6f4000000 ---p 00000000 00:00 0 
+7fe6f4000000-7fe6f40d7000 rw-p 00000000 00:00 0 
+7fe6f40d7000-7fe6f8000000 ---p 00000000 00:00 0 
+7fe6f80aa000-7fe6f80ad000 ---p 00000000 00:00 0 
+7fe6f80ad000-7fe6f81ab000 rw-p 00000000 00:00 0 
+7fe6f81ab000-7fe6f81ae000 ---p 00000000 00:00 0 
+7fe6f81ae000-7fe6f82ac000 rw-p 00000000 00:00 0 
+7fe6f82ac000-7fe6f82b3000 r-xp 00000000 103:01 16791074                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libawt_headless.so
+7fe6f82b3000-7fe6f84b2000 ---p 00007000 103:01 16791074                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libawt_headless.so
+7fe6f84b2000-7fe6f84b3000 r--p 00006000 103:01 16791074                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libawt_headless.so
+7fe6f84b3000-7fe6f84b4000 rw-p 00007000 103:01 16791074                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libawt_headless.so
+7fe6f84b4000-7fe6f8554000 r-xp 00000000 103:01 16791073                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libawt.so
+7fe6f8554000-7fe6f8753000 ---p 000a0000 103:01 16791073                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libawt.so
+7fe6f8753000-7fe6f8754000 r--p 0009f000 103:01 16791073                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libawt.so
+7fe6f8754000-7fe6f875f000 rw-p 000a0000 103:01 16791073                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libawt.so
+7fe6f875f000-7fe6f8984000 rw-p 00000000 00:00 0 
+7fe6f8984000-7fe6f8987000 ---p 00000000 00:00 0 
+7fe6f8987000-7fe6f8a85000 rw-p 00000000 00:00 0 
+7fe6f8a85000-7fe6f8a88000 ---p 00000000 00:00 0 
+7fe6f8a88000-7fe6f8b86000 rw-p 00000000 00:00 0 
+7fe6f8b86000-7fe6f8b89000 ---p 00000000 00:00 0 
+7fe6f8b89000-7fe6f8c87000 rw-p 00000000 00:00 0 
+7fe6f8c87000-7fe6f8c8a000 ---p 00000000 00:00 0 
+7fe6f8c8a000-7fe6f8f88000 rw-p 00000000 00:00 0 
+7fe6f8f88000-7fe6f8f8b000 ---p 00000000 00:00 0 
+7fe6f8f8b000-7fe6fc000000 rw-p 00000000 00:00 0 
+7fe6fc000000-7fe6fc021000 rw-p 00000000 00:00 0 
+7fe6fc021000-7fe700000000 ---p 00000000 00:00 0 
+7fe700000000-7fe700021000 rw-p 00000000 00:00 0 
+7fe700021000-7fe704000000 ---p 00000000 00:00 0 
+7fe704000000-7fe7064a6000 rw-p 00000000 00:00 0 
+7fe7064a6000-7fe708000000 ---p 00000000 00:00 0 
+7fe708000000-7fe7088e4000 rw-p 00000000 00:00 0 
+7fe7088e4000-7fe70c000000 ---p 00000000 00:00 0 
+7fe70c000000-7fe70c021000 rw-p 00000000 00:00 0 
+7fe70c021000-7fe710000000 ---p 00000000 00:00 0 
+7fe710033000-7fe710036000 ---p 00000000 00:00 0 
+7fe710036000-7fe710134000 rw-p 00000000 00:00 0 
+7fe710134000-7fe710137000 ---p 00000000 00:00 0 
+7fe710137000-7fe710235000 rw-p 00000000 00:00 0 
+7fe710235000-7fe710238000 ---p 00000000 00:00 0 
+7fe710238000-7fe710536000 rw-p 00000000 00:00 0 
+7fe710536000-7fe710539000 ---p 00000000 00:00 0 
+7fe710539000-7fe710837000 rw-p 00000000 00:00 0 
+7fe710837000-7fe710a37000 rw-p 00000000 00:00 0 
+7fe710a37000-7fe710c37000 rw-p 00000000 00:00 0 
+7fe710d2f000-7fe710f2f000 rw-p 00000000 00:00 0 
+7fe710f2f000-7fe710f32000 ---p 00000000 00:00 0 
+7fe710f32000-7fe711230000 rw-p 00000000 00:00 0 
+7fe711230000-7fe711430000 rw-p 00000000 00:00 0 
+7fe711430000-7fe718000000 r--p 00000000 103:01 13367887                  /usr/lib/locale/locale-archive
+7fe718000000-7fe718021000 rw-p 00000000 00:00 0 
+7fe718021000-7fe71c000000 ---p 00000000 00:00 0 
+7fe71c000000-7fe71c021000 rw-p 00000000 00:00 0 
+7fe71c021000-7fe720000000 ---p 00000000 00:00 0 
+7fe720000000-7fe720228000 rw-p 00000000 00:00 0 
+7fe720228000-7fe724000000 ---p 00000000 00:00 0 
+7fe724010000-7fe724210000 rw-p 00000000 00:00 0 
+7fe724210000-7fe724410000 rw-p 00000000 00:00 0 
+7fe724410000-7fe724610000 rw-p 00000000 00:00 0 
+7fe724610000-7fe724810000 rw-p 00000000 00:00 0 
+7fe724810000-7fe724a10000 rw-p 00000000 00:00 0 
+7fe724a10000-7fe724a13000 ---p 00000000 00:00 0 
+7fe724a13000-7fe724b11000 rw-p 00000000 00:00 0 
+7fe724b11000-7fe724b13000 r-xp 00000000 103:01 1407                      /usr/lib64/libutil-2.26.so
+7fe724b13000-7fe724d12000 ---p 00002000 103:01 1407                      /usr/lib64/libutil-2.26.so
+7fe724d12000-7fe724d13000 r--p 00001000 103:01 1407                      /usr/lib64/libutil-2.26.so
+7fe724d13000-7fe724d14000 rw-p 00002000 103:01 1407                      /usr/lib64/libutil-2.26.so
+7fe724d14000-7fe724d17000 r-xp 00000000 103:01 159380                    /tmp/libjansi-git-Paper-196-479301205519133946.so
+7fe724d17000-7fe724f16000 ---p 00003000 103:01 159380                    /tmp/libjansi-git-Paper-196-479301205519133946.so
+7fe724f16000-7fe724f17000 rw-p 00002000 103:01 159380                    /tmp/libjansi-git-Paper-196-479301205519133946.so
+7fe724f17000-7fe725117000 rw-p 00000000 00:00 0 
+7fe725117000-7fe725126000 r-xp 00000000 103:01 217838                    /usr/lib64/libbz2.so.1.0.6
+7fe725126000-7fe725325000 ---p 0000f000 103:01 217838                    /usr/lib64/libbz2.so.1.0.6
+7fe725325000-7fe725326000 r--p 0000e000 103:01 217838                    /usr/lib64/libbz2.so.1.0.6
+7fe725326000-7fe725327000 rw-p 0000f000 103:01 217838                    /usr/lib64/libbz2.so.1.0.6
+7fe725327000-7fe72534c000 r-xp 00000000 103:01 217820                    /usr/lib64/liblzma.so.5.2.2
+7fe72534c000-7fe72554b000 ---p 00025000 103:01 217820                    /usr/lib64/liblzma.so.5.2.2
+7fe72554b000-7fe72554c000 r--p 00024000 103:01 217820                    /usr/lib64/liblzma.so.5.2.2
+7fe72554c000-7fe72554d000 rw-p 00025000 103:01 217820                    /usr/lib64/liblzma.so.5.2.2
+7fe72554d000-7fe725564000 r-xp 00000000 103:01 217846                    /usr/lib64/libelf-0.170.so
+7fe725564000-7fe725763000 ---p 00017000 103:01 217846                    /usr/lib64/libelf-0.170.so
+7fe725763000-7fe725764000 r--p 00016000 103:01 217846                    /usr/lib64/libelf-0.170.so
+7fe725764000-7fe725765000 rw-p 00017000 103:01 217846                    /usr/lib64/libelf-0.170.so
+7fe725765000-7fe725769000 r-xp 00000000 103:01 217861                    /usr/lib64/libattr.so.1.1.0
+7fe725769000-7fe725968000 ---p 00004000 103:01 217861                    /usr/lib64/libattr.so.1.1.0
+7fe725968000-7fe725969000 r--p 00003000 103:01 217861                    /usr/lib64/libattr.so.1.1.0
+7fe725969000-7fe72596a000 rw-p 00004000 103:01 217861                    /usr/lib64/libattr.so.1.1.0
+7fe72596a000-7fe7259af000 r-xp 00000000 103:01 642517                    /usr/lib64/libdw-0.170.so
+7fe7259af000-7fe725baf000 ---p 00045000 103:01 642517                    /usr/lib64/libdw-0.170.so
+7fe725baf000-7fe725bb1000 r--p 00045000 103:01 642517                    /usr/lib64/libdw-0.170.so
+7fe725bb1000-7fe725bb2000 rw-p 00047000 103:01 642517                    /usr/lib64/libdw-0.170.so
+7fe725bb2000-7fe725bb6000 r-xp 00000000 103:01 217863                    /usr/lib64/libcap.so.2.22
+7fe725bb6000-7fe725db5000 ---p 00004000 103:01 217863                    /usr/lib64/libcap.so.2.22
+7fe725db5000-7fe725db6000 r--p 00003000 103:01 217863                    /usr/lib64/libcap.so.2.22
+7fe725db6000-7fe725db7000 rw-p 00004000 103:01 217863                    /usr/lib64/libcap.so.2.22
+7fe725db7000-7fe725dc7000 r-xp 00000000 103:01 642522                    /usr/lib64/libnss_myhostname.so.2
+7fe725dc7000-7fe725fc7000 ---p 00010000 103:01 642522                    /usr/lib64/libnss_myhostname.so.2
+7fe725fc7000-7fe725fca000 r--p 00010000 103:01 642522                    /usr/lib64/libnss_myhostname.so.2
+7fe725fca000-7fe725fcb000 rw-p 00013000 103:01 642522                    /usr/lib64/libnss_myhostname.so.2
+7fe725fcb000-7fe725fde000 r-xp 00000000 103:01 1401                      /usr/lib64/libresolv-2.26.so
+7fe725fde000-7fe7261de000 ---p 00013000 103:01 1401                      /usr/lib64/libresolv-2.26.so
+7fe7261de000-7fe7261df000 r--p 00013000 103:01 1401                      /usr/lib64/libresolv-2.26.so
+7fe7261df000-7fe7261e0000 rw-p 00014000 103:01 1401                      /usr/lib64/libresolv-2.26.so
+7fe7261e0000-7fe7261e2000 rw-p 00000000 00:00 0 
+7fe7261e2000-7fe7261e7000 r-xp 00000000 103:01 1395                      /usr/lib64/libnss_dns-2.26.so
+7fe7261e7000-7fe7263e6000 ---p 00005000 103:01 1395                      /usr/lib64/libnss_dns-2.26.so
+7fe7263e6000-7fe7263e7000 r--p 00004000 103:01 1395                      /usr/lib64/libnss_dns-2.26.so
+7fe7263e7000-7fe7263e8000 rw-p 00005000 103:01 1395                      /usr/lib64/libnss_dns-2.26.so
+7fe7263e8000-7fe7265e8000 rw-p 00000000 00:00 0 
+7fe7265e8000-7fe7265eb000 ---p 00000000 00:00 0 
+7fe7265eb000-7fe7266e9000 rw-p 00000000 00:00 0 
+7fe7266e9000-7fe7266f1000 r-xp 00000000 103:01 16791091                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libmanagement.so
+7fe7266f1000-7fe7268f1000 ---p 00008000 103:01 16791091                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libmanagement.so
+7fe7268f1000-7fe7268f2000 r--p 00008000 103:01 16791091                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libmanagement.so
+7fe7268f2000-7fe7268f3000 rw-p 00009000 103:01 16791091                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libmanagement.so
+7fe7268f3000-7fe726bce000 r--s 02c9c000 103:01 50336542                  /home/minecraft/mc-paper/cache/patched_1.14.4.jar
+7fe726bce000-7fe726be4000 r-xp 00000000 103:01 16791093                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libnet.so
+7fe726be4000-7fe726de4000 ---p 00016000 103:01 16791093                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libnet.so
+7fe726de4000-7fe726de5000 r--p 00016000 103:01 16791093                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libnet.so
+7fe726de5000-7fe726de6000 rw-p 00017000 103:01 16791093                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libnet.so
+7fe726de6000-7fe726df7000 r-xp 00000000 103:01 16791094                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libnio.so
+7fe726df7000-7fe726ff6000 ---p 00011000 103:01 16791094                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libnio.so
+7fe726ff6000-7fe726ff7000 r--p 00010000 103:01 16791094                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libnio.so
+7fe726ff7000-7fe726ff8000 rw-p 00011000 103:01 16791094                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libnio.so
+7fe726ff8000-7fe726ff9000 ---p 00000000 00:00 0 
+7fe726ff9000-7fe7270f9000 rw-p 00000000 00:00 0 
+7fe7270f9000-7fe7270fc000 ---p 00000000 00:00 0 
+7fe7270fc000-7fe7271fa000 rw-p 00000000 00:00 0 
+7fe7271fa000-7fe7271fb000 ---p 00000000 00:00 0 
+7fe7271fb000-7fe7271fe000 ---p 00000000 00:00 0 
+7fe7271fe000-7fe7272fb000 rw-p 00000000 00:00 0 
+7fe7272fb000-7fe7272fc000 ---p 00000000 00:00 0 
+7fe7272fc000-7fe7272ff000 ---p 00000000 00:00 0 
+7fe7272ff000-7fe7273fc000 rw-p 00000000 00:00 0 
+7fe7273fc000-7fe7273ff000 ---p 00000000 00:00 0 
+7fe7273ff000-7fe7274fd000 rw-p 00000000 00:00 0 
+7fe7274fd000-7fe727500000 ---p 00000000 00:00 0 
+7fe727500000-7fe7275fe000 rw-p 00000000 00:00 0 
+7fe7275fe000-7fe727601000 ---p 00000000 00:00 0 
+7fe727601000-7fe7276ff000 rw-p 00000000 00:00 0 
+7fe7276ff000-7fe727700000 ---p 00000000 00:00 0 
+7fe727700000-7fe728000000 rw-p 00000000 00:00 0 
+7fe728000000-7fe728024000 rw-p 00000000 00:00 0 
+7fe728024000-7fe72c000000 ---p 00000000 00:00 0 
+7fe72c01a000-7fe734000000 rw-p 00000000 00:00 0 
+7fe734000000-7fe734021000 rw-p 00000000 00:00 0 
+7fe734021000-7fe738000000 ---p 00000000 00:00 0 
+7fe738005000-7fe738021000 r--s 003b6000 103:01 41956861                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/ext/cldrdata.jar
+7fe738021000-7fe738024000 ---p 00000000 00:00 0 
+7fe738024000-7fe73841a000 rw-p 00000000 00:00 0 
+7fe73841a000-7fe7385ea000 r--s 04445000 103:01 12599580                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/rt.jar
+7fe7385ea000-7fe738dfe000 rw-p 00000000 00:00 0 
+7fe738dfe000-7fe738dff000 ---p 00000000 00:00 0 
+7fe738dff000-7fe738eff000 rw-p 00000000 00:00 0 
+7fe738eff000-7fe738f00000 ---p 00000000 00:00 0 
+7fe738f00000-7fe739000000 rw-p 00000000 00:00 0 
+7fe739000000-7fe739b10000 rwxp 00000000 00:00 0 
+7fe739b10000-7fe748000000 ---p 00000000 00:00 0 
+7fe748000000-7fe748fb5000 rw-p 00000000 00:00 0 
+7fe748fb5000-7fe74c000000 ---p 00000000 00:00 0 
+7fe74c006000-7fe74c008000 r--s 00019000 103:01 12599569                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/jce.jar
+7fe74c008000-7fe74c013000 r--s 0011c000 103:01 41956864                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/ext/localedata.jar
+7fe74c013000-7fe74c02e000 r--s 001d6000 103:01 41956866                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/ext/nashorn.jar
+7fe74c02e000-7fe74c036000 r--s 02933000 103:01 37748959                  /home/minecraft/mc-paper/paper.jar
+7fe74c036000-7fe74c18c000 rw-p 00000000 00:00 0 
+7fe74c18c000-7fe74c54a000 ---p 00000000 00:00 0 
+7fe74c54a000-7fe74c6a0000 rw-p 00000000 00:00 0 
+7fe74c6a0000-7fe74ca5e000 ---p 00000000 00:00 0 
+7fe74ca5e000-7fe74cc80000 rw-p 00000000 00:00 0 
+7fe74cc80000-7fe74cce8000 ---p 00000000 00:00 0 
+7fe74cce8000-7fe74cd16000 rw-p 00000000 00:00 0 
+7fe74cd16000-7fe74d0a9000 ---p 00000000 00:00 0 
+7fe74d0a9000-7fe74d0b1000 r-xp 00000000 103:01 16791101                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libzip.so
+7fe74d0b1000-7fe74d2b0000 ---p 00008000 103:01 16791101                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libzip.so
+7fe74d2b0000-7fe74d2b1000 r--p 00007000 103:01 16791101                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libzip.so
+7fe74d2b1000-7fe74d2b2000 rw-p 00008000 103:01 16791101                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libzip.so
+7fe74d2b2000-7fe74d2bd000 r-xp 00000000 103:01 1397                      /usr/lib64/libnss_files-2.26.so
+7fe74d2bd000-7fe74d4bc000 ---p 0000b000 103:01 1397                      /usr/lib64/libnss_files-2.26.so
+7fe74d4bc000-7fe74d4bd000 r--p 0000a000 103:01 1397                      /usr/lib64/libnss_files-2.26.so
+7fe74d4bd000-7fe74d4be000 rw-p 0000b000 103:01 1397                      /usr/lib64/libnss_files-2.26.so
+7fe74d4be000-7fe74d4c4000 rw-p 00000000 00:00 0 
+7fe74d4c4000-7fe74d4cc000 r-xp 00000000 103:01 875712                    /usr/lib64/libnss_sss.so.2
+7fe74d4cc000-7fe74d6cb000 ---p 00008000 103:01 875712                    /usr/lib64/libnss_sss.so.2
+7fe74d6cb000-7fe74d6cc000 r--p 00007000 103:01 875712                    /usr/lib64/libnss_sss.so.2
+7fe74d6cc000-7fe74d6cd000 rw-p 00008000 103:01 875712                    /usr/lib64/libnss_sss.so.2
+7fe74d6cd000-7fe74d6f7000 r-xp 00000000 103:01 16791083                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libjava.so
+7fe74d6f7000-7fe74d8f6000 ---p 0002a000 103:01 16791083                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libjava.so
+7fe74d8f6000-7fe74d8f7000 r--p 00029000 103:01 16791083                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libjava.so
+7fe74d8f7000-7fe74d8f9000 rw-p 0002a000 103:01 16791083                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libjava.so
+7fe74d8f9000-7fe74d906000 r-xp 00000000 103:01 16791100                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libverify.so
+7fe74d906000-7fe74db05000 ---p 0000d000 103:01 16791100                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libverify.so
+7fe74db05000-7fe74db07000 r--p 0000c000 103:01 16791100                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libverify.so
+7fe74db07000-7fe74db08000 rw-p 0000e000 103:01 16791100                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libverify.so
+7fe74db08000-7fe74db0f000 r-xp 00000000 103:01 1403                      /usr/lib64/librt-2.26.so
+7fe74db0f000-7fe74dd0e000 ---p 00007000 103:01 1403                      /usr/lib64/librt-2.26.so
+7fe74dd0e000-7fe74dd0f000 r--p 00006000 103:01 1403                      /usr/lib64/librt-2.26.so
+7fe74dd0f000-7fe74dd10000 rw-p 00007000 103:01 1403                      /usr/lib64/librt-2.26.so
+7fe74dd10000-7fe74dd26000 r-xp 00000000 103:01 1366                      /usr/lib64/libgcc_s-7-20180303.so.1
+7fe74dd26000-7fe74df25000 ---p 00016000 103:01 1366                      /usr/lib64/libgcc_s-7-20180303.so.1
+7fe74df25000-7fe74df26000 r--p 00015000 103:01 1366                      /usr/lib64/libgcc_s-7-20180303.so.1
+7fe74df26000-7fe74df27000 rw-p 00016000 103:01 1366                      /usr/lib64/libgcc_s-7-20180303.so.1
+7fe74df27000-7fe74e071000 r-xp 00000000 103:01 1387                      /usr/lib64/libm-2.26.so
+7fe74e071000-7fe74e270000 ---p 0014a000 103:01 1387                      /usr/lib64/libm-2.26.so
+7fe74e270000-7fe74e271000 r--p 00149000 103:01 1387                      /usr/lib64/libm-2.26.so
+7fe74e271000-7fe74e272000 rw-p 0014a000 103:01 1387                      /usr/lib64/libm-2.26.so
+7fe74e272000-7fe74e3ea000 r-xp 00000000 103:01 217793                    /usr/lib64/libstdc++.so.6.0.24
+7fe74e3ea000-7fe74e5ea000 ---p 00178000 103:01 217793                    /usr/lib64/libstdc++.so.6.0.24
+7fe74e5ea000-7fe74e5f4000 r--p 00178000 103:01 217793                    /usr/lib64/libstdc++.so.6.0.24
+7fe74e5f4000-7fe74e5f6000 rw-p 00182000 103:01 217793                    /usr/lib64/libstdc++.so.6.0.24
+7fe74e5f6000-7fe74e5fa000 rw-p 00000000 00:00 0 
+7fe74e5fa000-7fe74f36d000 r-xp 00000000 103:01 29369607                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/server/libjvm.so
+7fe74f36d000-7fe74f56c000 ---p 00d73000 103:01 29369607                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/server/libjvm.so
+7fe74f56c000-7fe74f609000 r--p 00d72000 103:01 29369607                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/server/libjvm.so
+7fe74f609000-7fe74f633000 rw-p 00e0f000 103:01 29369607                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/server/libjvm.so
+7fe74f633000-7fe74f663000 rw-p 00000000 00:00 0 
+7fe74f663000-7fe74f810000 r-xp 00000000 103:01 1381                      /usr/lib64/libc-2.26.so
+7fe74f810000-7fe74fa0f000 ---p 001ad000 103:01 1381                      /usr/lib64/libc-2.26.so
+7fe74fa0f000-7fe74fa13000 r--p 001ac000 103:01 1381                      /usr/lib64/libc-2.26.so
+7fe74fa13000-7fe74fa15000 rw-p 001b0000 103:01 1381                      /usr/lib64/libc-2.26.so
+7fe74fa15000-7fe74fa19000 rw-p 00000000 00:00 0 
+7fe74fa19000-7fe74fa1c000 r-xp 00000000 103:01 1385                      /usr/lib64/libdl-2.26.so
+7fe74fa1c000-7fe74fc1b000 ---p 00003000 103:01 1385                      /usr/lib64/libdl-2.26.so
+7fe74fc1b000-7fe74fc1c000 r--p 00002000 103:01 1385                      /usr/lib64/libdl-2.26.so
+7fe74fc1c000-7fe74fc1d000 rw-p 00003000 103:01 1385                      /usr/lib64/libdl-2.26.so
+7fe74fc1d000-7fe74fc2b000 r-xp 00000000 103:01 25399669                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/jli/libjli.so
+7fe74fc2b000-7fe74fe2a000 ---p 0000e000 103:01 25399669                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/jli/libjli.so
+7fe74fe2a000-7fe74fe2b000 r--p 0000d000 103:01 25399669                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/jli/libjli.so
+7fe74fe2b000-7fe74fe2c000 rw-p 0000e000 103:01 25399669                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/jli/libjli.so
+7fe74fe2c000-7fe74fe40000 r-xp 00000000 103:01 217814                    /usr/lib64/libz.so.1.2.7
+7fe74fe40000-7fe750040000 ---p 00014000 103:01 217814                    /usr/lib64/libz.so.1.2.7
+7fe750040000-7fe750041000 r--p 00014000 103:01 217814                    /usr/lib64/libz.so.1.2.7
+7fe750041000-7fe750042000 rw-p 00015000 103:01 217814                    /usr/lib64/libz.so.1.2.7
+7fe750042000-7fe75005b000 r-xp 00000000 103:01 1399                      /usr/lib64/libpthread-2.26.so
+7fe75005b000-7fe75025a000 ---p 00019000 103:01 1399                      /usr/lib64/libpthread-2.26.so
+7fe75025a000-7fe75025b000 r--p 00018000 103:01 1399                      /usr/lib64/libpthread-2.26.so
+7fe75025b000-7fe75025c000 rw-p 00019000 103:01 1399                      /usr/lib64/libpthread-2.26.so
+7fe75025c000-7fe750260000 rw-p 00000000 00:00 0 
+7fe750260000-7fe750285000 r-xp 00000000 103:01 1374                      /usr/lib64/ld-2.26.so
+7fe750286000-7fe75036f000 rw-p 00000000 00:00 0 
+7fe75036f000-7fe750377000 rw-s 00000000 103:01 46996267                  /tmp/hsperfdata_minecraft/17064
+7fe750377000-7fe750378000 ---p 00000000 00:00 0 
+7fe750378000-7fe75037b000 ---p 00000000 00:00 0 
+7fe75037b000-7fe75047a000 rw-p 00000000 00:00 0 
+7fe75047a000-7fe75047c000 r--s 00012000 103:01 41956870                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/ext/zipfs.jar
+7fe75047c000-7fe750480000 r--s 000bd000 103:01 12599571                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/jsse.jar
+7fe750480000-7fe750481000 rw-p 00000000 00:00 0 
+7fe750481000-7fe750482000 ---p 00000000 00:00 0 
+7fe750482000-7fe750484000 rw-p 00000000 00:00 0 
+7fe750484000-7fe750485000 r--p 00024000 103:01 1374                      /usr/lib64/ld-2.26.so
+7fe750485000-7fe750486000 rw-p 00025000 103:01 1374                      /usr/lib64/ld-2.26.so
+7fe750486000-7fe750487000 rw-p 00000000 00:00 0 
+7ffc82017000-7ffc82038000 rw-p 00000000 00:00 0                          [stack]
+7ffc82191000-7ffc82194000 r--p 00000000 00:00 0                          [vvar]
+7ffc82194000-7ffc82196000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xms1g -Xmx3900m 
+java_command: paper.jar nogui
+java_class_path (initial): paper.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/minecraft/.local/bin:/home/minecraft/bin
+SHELL=/bin/bash
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xb71b60], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xb71b60], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x92d7a0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x92d7a0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x92d7a0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x92d7a0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x92d650], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x92dcc0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x92dcc0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x92dcc0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x92dcc0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Amazon Linux release 2 (Karoo)
+
+uname:Linux 4.14.146-119.123.amzn2.x86_64 #1 SMP Mon Sep 23 16:58:43 UTC 2019 x86_64
+libc:glibc 2.26 NPTL 2.26 
+rlimit: STACK 8192k, CORE 0k, NPROC 4096, NOFILE 4096, AS infinity
+load average:1.22 0.44 0.26
+
+/proc/meminfo:
+MemTotal:        3978256 kB
+MemFree:          109924 kB
+MemAvailable:      17192 kB
+Buffers:               0 kB
+Cached:            38144 kB
+SwapCached:            0 kB
+Active:          3771992 kB
+Inactive:          21680 kB
+Active(anon):    3755720 kB
+Inactive(anon):      236 kB
+Active(file):      16272 kB
+Inactive(file):    21444 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:               204 kB
+Writeback:             0 kB
+AnonPages:       3755560 kB
+Mapped:            22296 kB
+Shmem:               396 kB
+Slab:              32540 kB
+SReclaimable:      17392 kB
+SUnreclaim:        15148 kB
+KernelStack:        3056 kB
+PageTables:        13052 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1989128 kB
+Committed_AS:    5131076 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      122856 kB
+DirectMap2M:     4009984 kB
+DirectMap1G:           0 kB
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0-1
+cpu_memory_nodes: 0
+active_processor_count: 2
+cpu_quota: -1
+cpu_period: 100000
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -1
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 3884756992
+memory_max_usage_in_bytes: 0
+
+
+CPU:total 2 (initial active 2) (2 cores per cpu, 2 threads per core) family 6 model 85 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 85
+model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
+stepping	: 4
+microcode	: 0x200005e
+cpu MHz		: 2500.000
+cache size	: 33792 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves ida arat pku ospke
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs
+bogomips	: 5000.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 85
+model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
+stepping	: 4
+microcode	: 0x200005e
+cpu MHz		: 2500.000
+cache size	: 33792 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves ida arat pku ospke
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs
+bogomips	: 5000.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 3978256k(109924k free), swap 0k(0k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.222-b10) for linux-amd64 JRE (1.8.0_222-b10), built on Aug 30 2019 18:31:05 by "mockbuild" with gcc 7.3.1 20180303 (Red Hat 7.3.1-5)
+
+time: Fri Oct  4 12:34:51 2019
+timezone: UTC
+elapsed time: 12 seconds (0d 0h 0m 12s)
+
